@@ -1,0 +1,42 @@
+<%= form_tag("find_country", method: "post") do %>
+    <table id="user-data">
+      <tr>
+        <td>
+          <%= label_tag(:male, "Пол") %>
+          <select name="male" id="male">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= label_tag(:height, "Рост") %>
+          <%= select_tag(:height, options_for_select(120..250)) %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= label_tag(:weight, "Вес") %>
+          <%= select_tag(:weight, options_for_select(50..120)) %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= label_tag(:body_type, "Телосложение") %>
+          <%= select_tag(:body_type, options_for_select(%w{slim normal fat})) %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= label_tag(:hair_color, "Цвет волос") %>
+          <%= select_tag(:hair_color, options_for_select(%w{dark blond red})) %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= submit_tag("Search") %>
+        </td>
+      </tr>
+    </table>
+<% end %>
