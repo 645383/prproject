@@ -1,4 +1,7 @@
 PrProject::Application.routes.draw do
+  root to: 'base#index'
+  post 'base/find_country'
+  get 'countries/show'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

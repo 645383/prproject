@@ -21,8 +21,11 @@ class BaseController < ApplicationController
   end
 
   def find_country
-      @p = select_country COUNTRIES, params
-    @c = COUNTRIES[@p]
+    @res = select_country(COUNTRIES, params)
+
+    @c = @res[0]
+    @p = @res
+
   end
 
   def select_country(countries_hash, params)
@@ -37,18 +40,20 @@ class BaseController < ApplicationController
       score[country] << (data[2] == (params[:body_type]))
       score[country] << (data[3] == (params[:hair_color]))
     end
-    c = 0
+
+    counter = 0
+
+    hash = {}
+    #debugger
     country = ''
     score.each do |k, v|
-      t = v.select{|n| n == true}.count
-      if t > c
-        c = t
-        country = k
-      else
-        c = c
+      prior_count = 0
+      v.each_with_index do |v, i|
+        prior_count += i + 1 if v == true
+        hash[k] = prior_count
       end
     end
-    country
+    hash
   end
 
 end
