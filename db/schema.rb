@@ -11,12 +11,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140618145304) do
+ActiveRecord::Schema.define(version: 20140620105222) do
 
   create_table "countries", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "females", force: true do |t|
+    t.integer  "height"
+    t.integer  "country_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "color_hair"
+    t.text     "physique"
+  end
+
+  create_table "male_and_females", force: true do |t|
+    t.integer  "height"
+    t.text     "color_hair"
+    t.text     "physique"
+    t.integer  "country_id"
+    t.string   "gender"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "males", force: true do |t|
+    t.integer  "height"
+    t.integer  "country_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "color_hair"
+    t.text     "physique"
   end
 
 end
