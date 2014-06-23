@@ -34,7 +34,6 @@ class BaseController < ApplicationController
     countries_hash.each { |k, v| score[k] = [] }
 
     countries_hash.each do |country, data|
-      #debugger
       score[country] << data[0].include?(params[:height].to_i)
       score[country] << data[1].include?(params[:weight].to_i)
       score[country] << (data[2] == (params[:body_type]))
@@ -44,7 +43,6 @@ class BaseController < ApplicationController
     counter = 0
 
     hash = {}
-    #debugger
     country = ''
     score.each do |k, v|
       prior_count = 0
@@ -54,6 +52,16 @@ class BaseController < ApplicationController
       end
     end
     hash
+  end
+
+  def serch_country
+    height = params[:height]
+    color_hair = params[:hair_color]
+    gender = params[:gender]
+    body_type = params[:body_type]
+
+    country = Country.find_by()
+
   end
 
 end

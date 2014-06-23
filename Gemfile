@@ -32,7 +32,6 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem 'roo'
 gem 'spreadsheet'
 
 # Use ActiveModel has_secure_password
