@@ -1,3 +1,32 @@
 // Place all the styles related to the Base controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#id_height, #id_weight, #id_bidy_type, #id_color_heir, #id_submit {
+//  margin: 100px 0 0;
+  padding: 40px 0 0;
+  display: none;
+  border-style: solid;
+  height: 20em;
+  font-size:30px;
+  font-style: italic;
+  font-family: times  , sans-serif;
+}
+#id_gender{
+//  margin: 100px 0 0;
+  padding: 40px 0 0;
+  border-style: solid;
+  height: 20em;
+  font-size:30px;
+  font-style: italic;
+  font-family: times  , sans-serif;
+}
+#list{
+  border-style: solid;
+  height: 50px;
+  width: 100px;
+}
+#q{
+  height: 100px;
+}
+

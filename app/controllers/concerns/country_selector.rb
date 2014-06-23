@@ -2,7 +2,7 @@ module CountrySelector
 
   def select_country(params)
 
-    gender = params[:gender] == "male" ? 'first' : 'last'
+    gender = params[:gender][:gender] == "male" ? 'first' : 'last'
     people = Country.all.map { |c| c.people.send(gender) }
 
     heights = []
