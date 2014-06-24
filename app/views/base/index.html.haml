@@ -1,0 +1,25 @@
+#q
+= form_tag("countries/find_country", method: "post") do
+  #id_gender.first.current
+    Мужчина
+    \#{radio_button_tag("gender", "male")}
+    Женщина
+    \#{radio_button_tag("gender", "female")}
+  #id_height
+    = label_tag(:height, "Рост")
+    = text_field_tag :height
+  #id_weight
+    = label_tag(:weight, "Вес")
+    = text_field_tag :weight
+  #id_bidy_type
+    = label_tag(:body_type, "Телосложение")
+    = select_tag(:body_type, options_for_select(%w(худое нормальное полное)))
+  #id_color_heir
+    = label_tag(:hair_color, "Цвет волос")
+    = select_tag(:hair_color, options_for_select(['черный', 'черный волнистый', 'шатен', 'шатен волнистый', |
+      'рыжий', 'белый']))                                                                                   |
+  #id_submit.last
+    = submit_tag("Search")
+
+%button#prev{:disabled => "disabled"} Prev
+%button#next Next

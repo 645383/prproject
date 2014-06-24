@@ -5,7 +5,8 @@ $(document).ready(function () {
 
         switch (current.attr('id')) {
             case "id_height":
-                $('<p>' + $("input:radio:checked").val() + '</p>').appendTo($('#q'))
+                var gender = $("input:radio:checked").val() == 'male' ? 'Мужчина' : 'Женщина';
+                $('<p> Вы ' + gender + '</p>').appendTo($('#q'))
                 break
             case 'id_weight':
                 $('<p>' + $('#height').val() + '</p>').appendTo($('#q'))
