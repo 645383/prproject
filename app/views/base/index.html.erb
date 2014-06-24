@@ -1,4 +1,4 @@
-<div id="q"></div>
+<div class="result"></div>
 <%= form_tag("base/find_country", method: "post") do %>
     <div id="id_gender" class="first current">
       Мужчина
@@ -14,7 +14,7 @@
       <%= label_tag(:weight, "Вес") %>
       <%= text_field_tag :weight %>
     </div>
-    <div id="id_bidy_type">
+    <div id="id_body_type">
       <%= label_tag(:body_type, "Телосложение") %>
       <%= select_tag(:body_type, options_for_select(%w{slim normal fat})) %>
     </div>
