@@ -7,7 +7,7 @@ module CountrySelector
 
     params = set_params params
 
-    gender = params[:gender] == "male" ? 'first' : 'last'
+    gender = params[:gender] == 1 ? 'first' : 'last'
     people = Country.all.map { |c| c.people.send(gender) }
 
     heights = []
@@ -52,11 +52,12 @@ module CountrySelector
   def set_params(params)
     params[:hair_color] = Person::HAIR_SCALE[params[:hair_color]]
     params[:body_type] = Person::BODY_SCALE[params[:body_type]]
+    params[:gender] = Person::GENDER_SCALE[params[:gender]]
 
     Person::RANGES.each do |param, range|
       value = params[param].to_i
       unless range.include? value
-        if params[param] == ""
+        if params[param] == "" || params[param] == nil
           raise Error.new "Пустые значение не допускаются"
         else
           case param
