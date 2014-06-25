@@ -1,4 +1,4 @@
-#q
+.result
 = form_tag("countries/find_country", method: "post") do
   #id_gender.first.current
     Мужчина
@@ -11,7 +11,7 @@
   #id_weight
     = label_tag(:weight, "Вес")
     = text_field_tag :weight
-  #id_bidy_type
+  #id_body_type
     = label_tag(:body_type, "Телосложение")
     = select_tag(:body_type, options_for_select(%w(худое нормальное полное)))
   #id_color_heir

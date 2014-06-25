@@ -2,31 +2,46 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#id_height, #id_weight, #id_bidy_type, #id_color_heir, #id_submit {
-//  margin: 100px 0 0;
+#id_height, #id_weight, #id_body_type, #id_color_heir, #id_submit {
+  //  margin: 100px 0 0;
   padding: 40px 0 0;
   display: none;
   border-style: solid;
   height: 20em;
-  font-size:30px;
+  font-size: 30px;
   font-style: italic;
-  font-family: times  , sans-serif;
+  font-family: times, sans-serif;
 }
-#id_gender{
-//  margin: 100px 0 0;
+
+#id_gender {
+  //  margin: 100px 0 0;
   padding: 40px 0 0;
   border-style: solid;
   height: 20em;
-  font-size:30px;
+  font-size: 30px;
   font-style: italic;
-  font-family: times  , sans-serif;
+  font-family: times, sans-serif;
 }
-#list{
+
+.list {
   border-style: solid;
-  height: 50px;
-  width: 100px;
+  min-height: 70px;
+  min-width: 100px;
+  text-align: center;
+  line-height: 50px;
+  padding: 0 10px;
+  margin: 0 10px 0 0;
 }
-#q{
+
+.result {
   height: 100px;
 }
 
+p {
+  display: inline-block;
+}
+
+#language {
+  position: relative;
+  left: 85%;
+}
