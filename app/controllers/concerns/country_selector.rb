@@ -7,7 +7,7 @@ module CountrySelector
 
     params = set_params params
 
-    gender = params[:gender] == 1 ? 'first' : 'last'
+    gender = params[:gender].to_i == 1 ? 'first' : 'last'
     people = Country.all.map { |c| c.people.send(gender) }
 
     heights = []
@@ -50,23 +50,25 @@ module CountrySelector
   private
 
   def set_params(params)
-    params[:hair_color] = Person::HAIR_SCALE[params[:hair_color]]
-    params[:body_type] = Person::BODY_SCALE[params[:body_type]]
-    params[:gender] = Person::GENDER_SCALE[params[:gender]]
-
+    #params[:hair_color] = Person::HAIR_SCALE[params[:hair_color]] ? Person::HAIR_SCALE[params[:hair_color]] :
+    #    Person::HAIR_SCALE[Person::TRANS_MAP[params[:hair_color]]]
+    #params[:body_type] = Person::BODY_SCALE[params[:body_type]]? Person::BODY_SCALE[params[:body_type]] :
+    #    Person::BODY_SCALE[Person::TRANS_MAP[params[:body_type]]]
+    #params[:gender] = Person::GENDER_SCALE[params[:gender]]
     Person::RANGES.each do |param, range|
       value = params[param].to_i
       unless range.include? value
         if params[param] == "" || params[param] == nil
-          raise Error.new "Пустые значение не допускаются"
+          raise Error.new "В мире есть сраны, где средний уровень грамотности позволил бы Вам не заполнить все
+необходимые поля. Скорее всего это произошло случайно. Попробуйте еще раз."
         else
           case param
-          when :height
-            raise Error.new value < range.min ?
-                "Прости,но этот тест не для гномов" : "Привет, Гулливер!"
-          when :weight
-            raise Error.new value < range.min ? "Прости, но этот тест не для дистрофиков" :
-                "Скорее всего ближайший спортзал не так и далеко!"
+            when :height
+              raise Error.new value < range.min ?
+                  "Прости,но этот тест не для гномов" : "Привет, Гулливер!"
+            when :weight
+              raise Error.new value < range.min ? "Прости, но этот тест не для дистрофиков" :
+                  "Скорее всего ближайший спортзал не так далеко..."
           end
         end
       end

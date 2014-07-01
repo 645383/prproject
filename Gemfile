@@ -23,6 +23,7 @@ gem 'jquery-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
+gem 'jquery-turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
@@ -34,6 +35,9 @@ group :doc do
 end
 
 gem 'spreadsheet'
+gem 'russian'
+gem "i18n-js"
+#gem "i18n-js-pika", require: "i18n-js"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

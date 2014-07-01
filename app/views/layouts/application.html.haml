@@ -3,11 +3,11 @@
   %head
     %title PrProject
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
-    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = javascript_include_tag "application"#, "data-turbolinks-track" => true
+    = javascript_include_tag "i18n", "translations"
     %script{:src => "http://code.jquery.com/jquery-latest.min.js"}
     %script{:src => "jquery.slides.min.js"}
     = csrf_meta_tags
   %body
-    - flash.each do |name, msg|
-      = content_tag :div, msg, class: name
+    = render 'layouts/header'
     = yield

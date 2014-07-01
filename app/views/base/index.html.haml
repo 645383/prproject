@@ -1,25 +1,32 @@
 .result
-= form_tag("countries/find_country", method: "post") do
-  #id_gender.first.current
-    Мужчина
-    \#{radio_button_tag("gender", "male")}
-    Женщина
-    \#{radio_button_tag("gender", "female")}
+  -locale = request.original_url.split("?locale=")[1]
+= form_tag(countries_find_country_path(params.merge(locale: locale)), method: "post") do
+  .first.current
+    = label_tag(:gender, t('gender.male'))
+    = radio_button_tag("gender", 1)
+    = label_tag(:gender, t('gender.female'))
+    = radio_button_tag("gender", 2)
   #id_height
-    = label_tag(:height, "Рост")
+    = label_tag(:height, t('features.height'))
     = text_field_tag :height
+    = range_field_tag :height_slider, nil, min: 138, max: 184
   #id_weight
-    = label_tag(:weight, "Вес")
+    = label_tag(:weight, t('features.weight'))
     = text_field_tag :weight
+    = range_field_tag :weight_slider, nil, min: 40, max: 95
   #id_body_type
-    = label_tag(:body_type, "Телосложение")
-    = select_tag(:body_type, options_for_select(%w(худое нормальное полное)))
-  #id_color_heir
-    = label_tag(:hair_color, "Цвет волос")
-    = select_tag(:hair_color, options_for_select(['черный', 'черный волнистый', 'шатен', 'шатен волнистый', |
-      'рыжий', 'белый']))                                                                                   |
+    = label_tag(:body_type, t('features.body_type'))
+    = select_tag(:body_type, options_for_select([[t('features.slim'), 1], [t('features.normal'), 2],
+    [t('features.fat'), 3]]))
+  #id_color_hair
+    = label_tag(:hair_color, t('hair_colors.hair_color'))
+    = select_tag(:hair_color, options_for_select([[t('hair_colors.black'), 1], [t('hair_colors.black_w'), 2],
+    [t('hair_colors.brown'), 3], [t('hair_colors.brown_w'), 4], [t('hair_colors.red'), 5], [t('hair_colors.blond'), 6]]))
   #id_submit.last
-    = submit_tag("Search")
+    = submit_tag(t("buttons.submit"))
 
-%button#prev{:disabled => "disabled"} Prev
-%button#next Next
+.buttons
+  %button#prev{:disabled => "disabled"}
+    = t('buttons.prev')
+  %button#next
+    = t('buttons.next')

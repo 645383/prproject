@@ -1,0 +1,6 @@
+%p
+  = link_to 'English', root_path(locale: "en")
+  = link_to 'Русский', root_path(locale: 'ru')
+
+- flash.each do |name, msg|
+  = content_tag :div, msg, class: name
