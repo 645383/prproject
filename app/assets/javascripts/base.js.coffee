@@ -7,13 +7,31 @@ $(document).ready ->
   else
     I18n.locale = 'ru'
 
+  $("#height").val($("#height_slider").val())
+  $("#weight").val($("#weight_slider").val())
+
   $("#height_slider").change ->
     newValue = $("#height_slider").val()
+    oldValue = $("#height").val()
     $("#height").val(newValue)
+    if oldValue > newValue
+      $("img").height($("img").height() - (oldValue - newValue) * 5)
+    else
+      img_height = $("img").height() + (newValue - oldValue) * 5
+      time = setInterval (->
+        $("img").height($("img").height() + 1)
+        clearInterval(time) if $("img").height() == img_height
+      ), 10
+
 
   $("#weight_slider").change ->
     newValue = $("#weight_slider").val()
+    oldValue = $("#weight").val()
     $("#weight").val(newValue)
+    if oldValue > newValue
+      $("img").width($("img").width() - (oldValue - newValue) * 3)
+    else
+      $("img").width($("img").width() + (newValue - oldValue) * 3)
 
   $("#next").click ->
     $(".notice").hide()
@@ -33,8 +51,12 @@ $(document).ready ->
           $('#gender_pass').removeClass('failed').addClass('passed').text "Ok"
           if gender == '1'
             $("#current_gender").text I18n.translate("answer.male")
+            $("#girl").hide(2000)
+            $("#boy").show(1000)
           else
             $("#current_gender").text I18n.translate('answer.female')
+            $("#boy").hide(2000)
+            $("#girl").show(1000)
 
       when "id_weight"
         if $("#current_height").text() is ""
@@ -100,3 +122,14 @@ $(document).ready ->
     $("#prev").attr "disabled", true  if $(".current").hasClass("first")
     $("#next").attr "disabled", null
     $(".notice").hide()
+
+#img_height = $("img").height()
+timer = imageGrow = (img_height) ->
+  unless document.getElementById("boy").height is img_height
+#    alert(img_height)
+    document.getElementById("boy").height += 1
+    setTimeout(imageGrow(img_height), 10)
+  else
+    clearTimeout timer
+  return
+

@@ -1,3 +1,7 @@
+.images
+  %img#boy{:src => "/assets/boy.svg", :alt => "boy", :height => "250", :width => "130"}
+  %img#girl{:src => "/assets/girl1.svg", :alt => "girl", :height => "250", :width => "130"}
+
 .result
   -locale = request.original_url.split("?locale=")[1]
 = form_tag(countries_find_country_path(params.merge(locale: locale)), method: "post") do

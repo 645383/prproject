@@ -34,7 +34,7 @@
   width: 200px;
   text-align: center;
   position: fixed;
-  top: 55%;
+  top: 60%;
   left: 50%;
   margin-top: -12px;
   margin-left: -100px;
@@ -110,6 +110,18 @@ p {
   text-align: center;
   border: 2px solid;
   border-radius: 25px;
+}
+
+.images {
+  position: fixed;
+  top: 10%;
+  left: 70%;
+}
+
+.showpage {
+  background-image: url("/assets/globe.svg");
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 #language {

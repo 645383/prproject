@@ -24,6 +24,7 @@ module CountrySelector
 
     #%i(heights weights hair_colors body_types).each {|param| instance_variable_set("@#{param}_variation",
     #    eval("param.max - param.min"))}
+    #debugger
     height_variation = heights.max - heights.min
     weight_variation = weights.max - weights.min
     hair_variation = hair_colors.max - hair_colors.min
