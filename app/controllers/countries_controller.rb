@@ -3,7 +3,7 @@ class CountriesController < ApplicationController
 
   def show
     @show_page = true
-    @country = Country.find(params[:format]).name
+    @country = Country.find(params[:format]).name.to_sym
   rescue Exception => e
     flash[:notice] = e.message
     redirect_to root_path

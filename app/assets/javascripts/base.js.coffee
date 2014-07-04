@@ -12,17 +12,19 @@ $(document).ready ->
 
   $("#height_slider").change ->
     newValue = $("#height_slider").val()
-    oldValue = $("#height").val()
+    oldValue = $("img").height() #привести значение 250 пикселей к соизмеримости с значинием в саниметрах, которые передает ползунок
+#    oldValue = document.getElementsByTagName("img")[0].height
+    console.log(oldValue)
     $("#height").val(newValue)
     if oldValue > newValue
-      $("img").height($("img").height() - (oldValue - newValue) * 5)
+      $("img").height $("img").height() - (oldValue - newValue) * 5
     else
-      img_height = $("img").height() + (newValue - oldValue) * 5
-      time = setInterval (->
-        $("img").height($("img").height() + 1)
-        clearInterval(time) if $("img").height() == img_height
-      ), 10
-
+      $("img").height $("img").height() + (newValue - oldValue) * 5
+  #      img_height = $("img").height() + (newValue - oldValue) * 5
+  #      time = setInterval (->
+  #        $("img").height $("img").height() + 1
+  #        clearInterval(time) if $("img").height() == img_height
+  #      ), 10
 
   $("#weight_slider").change ->
     newValue = $("#weight_slider").val()
@@ -39,6 +41,7 @@ $(document).ready ->
 
     switch current.attr("id")
       when "id_height"
+        document.body.style.backgroundColor = "#eeeeee"
         gender = $("input:radio:checked").val()
         if $("#current_gender").text() is ""
           $("<p class=\"list\" id=\"current_gender\"> sadf </p>").appendTo $(".result")
@@ -59,6 +62,7 @@ $(document).ready ->
             $("#girl").show(1000)
 
       when "id_weight"
+        document.body.style.backgroundColor = "#C0CDF3"
         if $("#current_height").text() is ""
           $("<p class=\"list\" id=\"current_height\"> Ваш рост " + $("#height").val() + "</p>").appendTo $(".result")
           $("<p class='passed' id='height_pass'>Ok</p>").appendTo $(".result")
@@ -71,6 +75,7 @@ $(document).ready ->
           $("#current_height").text I18n.translate("answer.height") + $("#height").val()
 
       when "id_body_type"
+        document.body.style.backgroundColor = "#A4CCE5"
         if $("#current_weight").text() is ""
           $("<p class=\"list\" id=\"current_weight\"> Ваш вес " + $("#weight").val() + "</p>").appendTo $(".result")
           $("<p class='passed' id='weight_pass'>Ok</p>").appendTo $(".result")
@@ -83,6 +88,7 @@ $(document).ready ->
           $("#current_weight").text I18n.translate("answer.weight") + $("#weight").val()
 
       when "id_color_hair"
+        document.body.style.backgroundColor = "#FFF1C2"
         if $("#body_type").val() == "1"
           body = I18n.translate("answer.body") + I18n.translate("bodies.slim")
         else if  $("#body_type").val() == "2"
@@ -96,6 +102,7 @@ $(document).ready ->
           $("#current_body").text body
 
       else
+        document.body.style.backgroundColor = "#FBCC5A"
         if $("#hair_color").val() == "1"
           hair = I18n.translate("answer.hair") + I18n.translate("colors.black")
         else if  $("#hair_color").val() == "2"
@@ -114,7 +121,7 @@ $(document).ready ->
         else
           $("#current_color").text hair
 
-    $("#next").attr "disabled", true  if $(".current").hasClass("last")
+    $("#next").attr "disabled", true if $(".current").hasClass("last")
     $("#prev").attr "disabled", null
 
   $("#prev").click ->
@@ -123,13 +130,26 @@ $(document).ready ->
     $("#next").attr "disabled", null
     $(".notice").hide()
 
+  $(".social-likes").socialLikes
+    url: "http://auto.ria.ua"
+#    title: "Beautiful “like” buttons with counters for popular social networks"
+    counters: true
+    zeroes: true
+
+
+
+#    singleTitle: "Share it!"
+#    zeroes: true
+#    forceUpdate: true
+
+
 #img_height = $("img").height()
-timer = imageGrow = (img_height) ->
-  unless document.getElementById("boy").height is img_height
-#    alert(img_height)
-    document.getElementById("boy").height += 1
-    setTimeout(imageGrow(img_height), 10)
-  else
-    clearTimeout timer
-  return
+#timer = imageGrow = (img_height) ->
+#  unless document.getElementById("boy").height is img_height
+##    alert(img_height)
+#    document.getElementById("boy").height += 1
+#    setTimeout(imageGrow(img_height), 10)
+#  else
+#    clearTimeout timer
+#  return
 
