@@ -1,20 +1,20 @@
 // Place all the styles related to the Base controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-#id_height, #id_weight, #id_body_type, #id_color_hair, #id_submit {
-  width: 400px;
-  text-align: center;
+.form {
+  width: 450px;
   position: fixed;
   top: 50%;
   left: 50%;
   margin-top: -9px;
-  margin-left: -200px;
-  display: none;
-  font-size: 30px;
-  font-style: italic;
-  font-family: times, sans-serif;
-
+  margin-left: -225px;
+  #id_height, #id_weight, #id_body_type, #id_color_hair, #id_submit {
+    text-align: center;
+    display: none;
+    font-size: 30px;
+    font-style: italic;
+    font-family: times, sans-serif;
+  }
 }
 
 .first.current {
@@ -124,10 +124,34 @@ p {
   background-size: 100%;
 }
 
+.languages {
+  position: fixed;
+  top: 3%;
+  right: 3%;
+}
 
-//#language {
-//  position: relative;
-//  left: 85%;
-//}
+.body_types_images {
+  position: fixed;
+  top: 75%;
+  left: 50%;
+  width: 450px;
+  //  margin-top: -12px;
+  margin-left: -225px;
+
+  #slim, #normal, #fat {
+    width: 115px;
+    display: inline;
+    border-radius: 10px;
+    font-size: 20px;
+  }
+//  #suggest {
+//    display: inline-block;
+//  }
+}
+
+.indexpage {
+  background-color: #e2e2e2;
+}
+
 
 

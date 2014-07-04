@@ -7,24 +7,18 @@ $(document).ready ->
   else
     I18n.locale = 'ru'
 
-  $("#height").val($("#height_slider").val())
-  $("#weight").val($("#weight_slider").val())
-
   $("#height_slider").change ->
     newValue = $("#height_slider").val()
-    oldValue = $("img").height() #привести значение 250 пикселей к соизмеримости с значинием в саниметрах, которые передает ползунок
-#    oldValue = document.getElementsByTagName("img")[0].height
-    console.log(oldValue)
+    oldValue = $("#height").val()
     $("#height").val(newValue)
+    unless Math.pow((oldValue - newValue), 2) is 1
+      oldValue = $("#height").val()
     if oldValue > newValue
-      $("img").height $("img").height() - (oldValue - newValue) * 5
+      $("img").height($("img").height() - 5)
+    else if oldValue == newValue
+      #NOP
     else
-      $("img").height $("img").height() + (newValue - oldValue) * 5
-  #      img_height = $("img").height() + (newValue - oldValue) * 5
-  #      time = setInterval (->
-  #        $("img").height $("img").height() + 1
-  #        clearInterval(time) if $("img").height() == img_height
-  #      ), 10
+      $("img").height($("img").height() + 5)
 
   $("#weight_slider").change ->
     newValue = $("#weight_slider").val()
@@ -37,11 +31,12 @@ $(document).ready ->
 
   $("#next").click ->
     $(".notice").hide()
-    current = $(".current").removeClass("current").hide().next().show().addClass("current")
+    current = $(".current").removeClass("current").slideUp().next().slideDown().addClass("current")
 
     switch current.attr("id")
       when "id_height"
-        document.body.style.backgroundColor = "#eeeeee"
+        $("#height").val($("#height_slider").val())
+        document.body.style.backgroundColor = "#E2E2E2"
         gender = $("input:radio:checked").val()
         if $("#current_gender").text() is ""
           $("<p class=\"list\" id=\"current_gender\"> sadf </p>").appendTo $(".result")
@@ -62,7 +57,8 @@ $(document).ready ->
             $("#girl").show(1000)
 
       when "id_weight"
-        document.body.style.backgroundColor = "#C0CDF3"
+        $("#weight").val($("#weight_slider").val())
+        document.body.style.backgroundColor = "#CCCCCC"
         if $("#current_height").text() is ""
           $("<p class=\"list\" id=\"current_height\"> Ваш рост " + $("#height").val() + "</p>").appendTo $(".result")
           $("<p class='passed' id='height_pass'>Ok</p>").appendTo $(".result")
@@ -75,7 +71,7 @@ $(document).ready ->
           $("#current_height").text I18n.translate("answer.height") + $("#height").val()
 
       when "id_body_type"
-        document.body.style.backgroundColor = "#A4CCE5"
+        document.body.style.backgroundColor = "#B3B3B3"
         if $("#current_weight").text() is ""
           $("<p class=\"list\" id=\"current_weight\"> Ваш вес " + $("#weight").val() + "</p>").appendTo $(".result")
           $("<p class='passed' id='weight_pass'>Ok</p>").appendTo $(".result")
@@ -86,9 +82,24 @@ $(document).ready ->
         else
           $('#weight_pass').removeClass('failed').addClass('passed').text "Ok"
           $("#current_weight").text I18n.translate("answer.weight") + $("#weight").val()
+        if ($('#height').val() - $('#weight').val()) > 90 and ($('#height').val() - $('#weight').val()) < 110
+          $('#body_type').val(2)
+          $('#normal').css("background-color", "#eeeeee")
+          $('#fat').css("background-color", "")
+          $('#slim').css("background-color", "")
+        else if ($('#height').val() - $('#weight').val()) < 90
+          $('#body_type').val(3)
+          $('#fat').css("background-color", "#eeeeee")
+          $('#normal').css("background-color", "")
+          $('#slim').css("background-color", "")
+        else
+          $('#body_type').val(1)
+          $('#slim').css("background-color", "#eeeeee")
+          $('#normal').css("background-color", "")
+          $('#fat').css("background-color", "")
 
       when "id_color_hair"
-        document.body.style.backgroundColor = "#FFF1C2"
+        document.body.style.backgroundColor = "#999999"
         if $("#body_type").val() == "1"
           body = I18n.translate("answer.body") + I18n.translate("bodies.slim")
         else if  $("#body_type").val() == "2"
@@ -102,7 +113,7 @@ $(document).ready ->
           $("#current_body").text body
 
       else
-        document.body.style.backgroundColor = "#FBCC5A"
+        document.body.style.backgroundColor = "#9F9F9F"
         if $("#hair_color").val() == "1"
           hair = I18n.translate("answer.hair") + I18n.translate("colors.black")
         else if  $("#hair_color").val() == "2"
@@ -125,17 +136,17 @@ $(document).ready ->
     $("#prev").attr "disabled", null
 
   $("#prev").click ->
-    $(".current").removeClass("current").hide().prev().show().addClass "current"
+    $("#weight").val($("#weight_slider").val())
+    $("#height").val($("#height_slider").val())
+    $(".current").removeClass("current").slideUp().prev().slideDown().addClass "current"
     $("#prev").attr "disabled", true  if $(".current").hasClass("first")
     $("#next").attr "disabled", null
     $(".notice").hide()
 
   $(".social-likes").socialLikes
     url: "http://auto.ria.ua"
-#    title: "Beautiful “like” buttons with counters for popular social networks"
     counters: true
     zeroes: true
-
 
 
 #    singleTitle: "Share it!"

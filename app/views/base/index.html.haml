@@ -1,6 +1,6 @@
 .images
-  %img#boy{:src => "/assets/girl1.svg.png", :alt => "boy", :height => "250", :width => "130"}
-  %img#girl{:src => "/assets/girl1.svg.png", :alt => "girl", :height => "250", :width => "130"}
+  -#%img#boy{:src => "/assets/girl1.svg.png", :alt => "boy", :height => "250", :width => "130"}
+  -#%img#girl{:src => "/assets/girl1.svg.png", :alt => "girl", :height => "250", :width => "130"}
 
 .result
 -locale = request.original_url.split("?locale=")[1]
@@ -20,6 +20,15 @@
       = text_field_tag :weight
       = range_field_tag :weight_slider, nil, min: 40, max: 95
     #id_body_type
+      .body_types_images
+        #suggest
+          =t('suggest')
+        #slim
+          =t('features.slim')
+        #normal
+          =t('features.normal')
+        #fat
+          =t('features.fat')
       = label_tag(:body_type, t('features.body_type'))
       = select_tag(:body_type, options_for_select([[t('features.slim'), 1], [t('features.normal'), 2],
       [t('features.fat'), 3]]))
