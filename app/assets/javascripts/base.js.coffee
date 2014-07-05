@@ -11,14 +11,16 @@ $(document).ready ->
     newValue = $("#height_slider").val()
     oldValue = $("#height").val()
     $("#height").val(newValue)
-    unless Math.pow((oldValue - newValue), 2) is 1
-      oldValue = $("#height").val()
+#    unless Math.pow((oldValue - newValue), 2) is 1
+#      oldValue = $("#height").val()
     if oldValue > newValue
-      $("img").height($("img").height() - 5)
-    else if oldValue == newValue
+#      $("img").height($("img").height() - 5)
+#    else if oldValue == newValue
       #NOP
+      $("img").height($("img").height() - (oldValue - newValue) * 5)
     else
-      $("img").height($("img").height() + 5)
+      $("img").height($("img").height() + (newValue - oldValue) * 5)
+
 
   $("#weight_slider").change ->
     newValue = $("#weight_slider").val()
@@ -31,7 +33,7 @@ $(document).ready ->
 
   $("#next").click ->
     $(".notice").hide()
-    current = $(".current").removeClass("current").slideUp().next().slideDown().addClass("current")
+    current = $(".current").removeClass("current").hide().next().slideDown().addClass("current")
 
     switch current.attr("id")
       when "id_height"
@@ -138,7 +140,7 @@ $(document).ready ->
   $("#prev").click ->
     $("#weight").val($("#weight_slider").val())
     $("#height").val($("#height_slider").val())
-    $(".current").removeClass("current").slideUp().prev().slideDown().addClass "current"
+    $(".current").removeClass("current").hide().prev().slideDown().addClass "current"
     $("#prev").attr "disabled", true  if $(".current").hasClass("first")
     $("#next").attr "disabled", null
     $(".notice").hide()
