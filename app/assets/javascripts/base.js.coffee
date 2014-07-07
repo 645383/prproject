@@ -11,8 +11,8 @@ $(document).ready ->
     newValue = $("#height_slider").val()
     oldValue = $("#height").val()
     $("#height").val(newValue)
-#    unless Math.pow((oldValue - newValue), 2) is 1
-#      oldValue = $("#height").val()
+    #    unless Math.pow((oldValue - newValue), 2) is 1
+    #      oldValue = $("#height").val()
     if oldValue > newValue
 #      $("img").height($("img").height() - 5)
 #    else if oldValue == newValue
@@ -73,6 +73,9 @@ $(document).ready ->
           $("#current_height").text I18n.translate("answer.height") + $("#height").val()
 
       when "id_body_type"
+        $("#normal").off('mouseenter mouseleave');
+        $("#fat").off('mouseenter mouseleave');
+        $("#slim").off('mouseenter mouseleave');
         document.body.style.backgroundColor = "#B3B3B3"
         if $("#current_weight").text() is ""
           $("<p class=\"list\" id=\"current_weight\"> Ваш вес " + $("#weight").val() + "</p>").appendTo $(".result")
@@ -84,18 +87,23 @@ $(document).ready ->
         else
           $('#weight_pass').removeClass('failed').addClass('passed').text "Ok"
           $("#current_weight").text I18n.translate("answer.weight") + $("#weight").val()
+
+        tip = I18n.translate("suggest")
         if ($('#height').val() - $('#weight').val()) > 90 and ($('#height').val() - $('#weight').val()) < 110
           $('#body_type').val(2)
+          $('#normal').hover (-> $(this).append $("<span></span>").text tip), -> $(this).find("span:last").remove()
           $('#normal').css("background-color", "#eeeeee")
           $('#fat').css("background-color", "")
           $('#slim').css("background-color", "")
         else if ($('#height').val() - $('#weight').val()) < 90
           $('#body_type').val(3)
+          $('#fat').hover (-> $(this).append $("<span></span>").text tip), -> $(this).find("span:last").remove()
           $('#fat').css("background-color", "#eeeeee")
           $('#normal').css("background-color", "")
           $('#slim').css("background-color", "")
         else
           $('#body_type').val(1)
+          $('#slim').hover (-> $(this).append $("<span></span>").text tip), -> $(this).find("span:last").remove()
           $('#slim').css("background-color", "#eeeeee")
           $('#normal').css("background-color", "")
           $('#fat').css("background-color", "")

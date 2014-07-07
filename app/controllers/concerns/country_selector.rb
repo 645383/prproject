@@ -5,7 +5,7 @@ module CountrySelector
 
   def select_country(params)
 
-    params = set_params params
+    params = check_exceptional_params params
 
     gender = params[:gender].to_i == 1 ? 'first' : 'last'
     people = Country.all.map { |c| c.people.send(gender) }
@@ -22,9 +22,6 @@ module CountrySelector
       body_types << Person::BODY_SCALE[person.body_type]
     end
 
-    #%i(heights weights hair_colors body_types).each {|param| instance_variable_set("@#{param}_variation",
-    #    eval("param.max - param.min"))}
-    #debugger
     height_variation = heights.max - heights.min
     weight_variation = weights.max - weights.min
     hair_variation = hair_colors.max - hair_colors.min
@@ -50,26 +47,18 @@ module CountrySelector
 
   private
 
-  def set_params(params)
-    #params[:hair_color] = Person::HAIR_SCALE[params[:hair_color]] ? Person::HAIR_SCALE[params[:hair_color]] :
-    #    Person::HAIR_SCALE[Person::TRANS_MAP[params[:hair_color]]]
-    #params[:body_type] = Person::BODY_SCALE[params[:body_type]]? Person::BODY_SCALE[params[:body_type]] :
-    #    Person::BODY_SCALE[Person::TRANS_MAP[params[:body_type]]]
-    #params[:gender] = Person::GENDER_SCALE[params[:gender]]
+  def check_exceptional_params(params)
     Person::RANGES.each do |param, range|
       value = params[param].to_i
       unless range.include? value
         if params[param] == "" || params[param] == nil
-          raise Error.new "В мире есть сраны, где средний уровень грамотности позволил бы Вам не заполнить все
-необходимые поля. Скорее всего это произошло случайно. Попробуйте еще раз."
+          raise Error.new t("exceptions.no_input")
         else
           case param
             when :height
-              raise Error.new value < range.min ?
-                  "Прости,но этот тест не для гномов" : "Привет, Гулливер!"
+              raise Error.new value < range.min ? t('exceptions.height_s') : t('exceptions.height_b')
             when :weight
-              raise Error.new value < range.min ? "Прости, но этот тест не для дистрофиков" :
-                  "Скорее всего ближайший спортзал не так далеко..."
+              raise Error.new value < range.min ? t('exceptions.weight_s') : t('exceptions.weight_b')
           end
         end
       end

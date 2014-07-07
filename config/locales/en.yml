@@ -46,6 +46,11 @@ en:
     brown: "brown"
     br_w: "brown wavy"
     blond: "blond"
-  no_input: "Something went wrong. Please, try again."
+  exceptions:
+    no_input: "Empty fields not allowed. Please, try again."
+    height_s: "Sorry, height input is not correct"
+    height_b: "Sorry, height input is not correct"
+    weight_s: "Sorry, weight input is not correct"
+    weight_b: "Sorry, weight input is not correct"
   share: "Share us with your friends"
-  suggest: "Your body type is"
+  suggest: "Probably this is body type you have"

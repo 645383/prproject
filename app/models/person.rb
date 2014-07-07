@@ -7,5 +7,5 @@ class Person < ActiveRecord::Base
   HAIR_SCALE = { 'черный' => 1, 'черный волнистый' => 2, 'шатен' => 3, 'шатен волнистый' => 4, 'рыжий' => 5,
       'блондин' => 6 }
   BODY_SCALE = { 'худое' => 1, 'нормальное' => 2, 'полное' => 3 }
-  RANGES = { gender: 1..2, height: 138..184, weight: 40..95, hair_color: 1..6, body_type: 1..3 }
+  RANGES = { gender: 1..2, height: 130..220, weight: 40..150, hair_color: 1..6, body_type: 1..3 }
 end

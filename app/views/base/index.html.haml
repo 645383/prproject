@@ -1,6 +1,6 @@
 .images
-  %img#boy{:src => "/assets/girl1.svg.png", :alt => "boy", :height => "250", :width => "130"}
-  %img#girl{:src => "/assets/girl1.svg.png", :alt => "girl", :height => "250", :width => "130"}
+  -#%img#boy{:src => "/assets/girl1.svg.png", :alt => "boy", :height => "250", :width => "130"}
+  -#%img#girl{:src => "/assets/girl1.svg.png", :alt => "girl", :height => "250", :width => "130"}
 
 .result
 -locale = request.original_url.split("?locale=")[1]
@@ -14,15 +14,13 @@
     #id_height
       = label_tag(:height, t('features.height'))
       = text_field_tag :height
-      = range_field_tag :height_slider, nil, min: 138, max: 184
+      = range_field_tag :height_slider, nil, min: 130, max: 220
     #id_weight
       = label_tag(:weight, t('features.weight'))
       = text_field_tag :weight
-      = range_field_tag :weight_slider, nil, min: 40, max: 95
+      = range_field_tag :weight_slider, nil, min: 40, max: 150
     #id_body_type
       .body_types_images
-        #suggest
-          =t('suggest')
         #slim
           =t('features.slim')
         #normal
