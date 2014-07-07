@@ -1,0 +1,6 @@
+$icons: sprite-map("icons/*.png", $spacing: 20px);
+
+%iconsSprite{
+    background-image: sprite-url($icons);
+    background-repeat:  no-repeat;
+}

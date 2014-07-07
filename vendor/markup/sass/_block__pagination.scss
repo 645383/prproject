@@ -1,0 +1,50 @@
+/* ============================================================================
+   @group Pagination
+============================================================================ */
+.pages {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: inline-block;
+    .ie6-7 & {
+      display: inline;
+      zoom: 1;
+    }
+  }
+  li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    .pages__item {
+    }
+    .pages__item_current {
+      border-bottom: 2px solid #45b8e9;
+    }
+  }
+  a {
+    text-decoration: none;
+    .pages__item {
+    }
+    &:hover {
+      .pages__item {
+        background: #ccc;
+      }
+    }
+  }
+}
+.pages__item {
+  display: inline-block;
+  padding: 3px 8px;
+  .ie6-7 & {
+    display: inline;
+    zoom: 1;
+  }
+}
+.pages__item_arrow {
+}
+.pages__item_arrow-prev {
+}
+.pages__item_arrow-next {
+}
+/* @end */
