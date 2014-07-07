@@ -1,0 +1,571 @@
+/* ============================================================================
+	Custom style
+============================================================================= */
+.step-nav__item a:after {
+  background-image: url('../img/icons-s71b354607b.png');
+  background-repeat: no-repeat;
+}
+
+/* ============================================================================
+		Fonts
+============================================================================= */
+@font-face {
+  font-family: 'museo_500';
+  src: url("../fonts/museosanscyrl-500-webfont.eot");
+  src: url("../fonts/museosanscyrl-500-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/museosanscyrl-500-webfont.woff") format("woff"), url("../fonts/museosanscyrl-500-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'pf_regal';
+  src: url("../fonts/pfregaltextpro-ublack-webfont.eot");
+  src: url("../fonts/pfregaltextpro-ublack-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/pfregaltextpro-ublack-webfont.woff") format("woff"), url("../fonts/pfregaltextpro-ublack-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'museo_100';
+  src: url("../fonts/museosanscyrl-100-webfont.eot");
+  src: url("../fonts/museosanscyrl-100-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/museosanscyrl-100-webfont.woff") format("woff"), url("../fonts/museosanscyrl-100-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ============================================================================
+		Typography
+============================================================================= */
+p,
+pre,
+blockquote,
+table {
+  margin: 0;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before,
+q:after {
+  content: '';
+}
+
+blockquote {
+  margin: rhythm(1) 4.2em 0;
+}
+
+strong,
+b {
+  font-weight: bold;
+}
+
+.title_name {
+  font-family: 'pf_regal';
+  font-size: 52px;
+}
+
+.text_center {
+  text-align: center;
+}
+
+.text_left {
+  text-align: left;
+}
+
+.text_right {
+  text-align: right;
+}
+
+.num_question {
+  padding: 75px 0 0 0;
+  text-align: center;
+  font-family: 'pf_regal';
+  font-size: 24px;
+}
+
+.title_question {
+  text-align: center;
+  font-family: 'pf_regal';
+  font-size: 52px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 15px 35px;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  font-size: 16px;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-family: 'museo_500';
+}
+
+.btn_color {
+  background-color: #249fed;
+  color: #fff;
+}
+
+.ie6-7 a * {
+  cursor: pointer;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none !important;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  min-width: 820px;
+  background-color: #fff;
+  color: #000;
+  font-size: 14px;
+  font-family: 'museo_100';
+  line-height: 1.42857143;
+}
+
+input,
+button,
+select,
+textarea {
+  font-size: inherit;
+  font-family: inherit;
+  line-height: inherit;
+}
+
+figure {
+  margin: 0;
+}
+
+img {
+  vertical-align: middle;
+}
+
+.clearfix:before, .clearfix:after, .page:before, .page:after {
+  display: table;
+  content: " ";
+}
+.clearfix:after, .page:after {
+  clear: both;
+}
+
+.block_left {
+  float: left !important;
+}
+
+.block_right {
+  float: right !important;
+}
+
+.block_center {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 10px;
+  width: 960px;
+}
+
+.page {
+  height: 100%;
+  min-height: 100%;
+  min-width: 800px;
+}
+
+.page_index {
+  background: url("../img/bg_index.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.page_second {
+  background: #c8cbef;
+}
+
+/* ============================================================================
+    Layout: header
+============================================================================= */
+.page__header {
+  position: relative;
+  height: 100px;
+  background: rgba(254, 254, 254, 0.1);
+}
+
+.logo {
+  display: block;
+  position: absolute;
+  width: 39px;
+  height: 35px;
+  left: 40px;
+  top: 35px;
+  background: url("../img/logo.png") no-repeat;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.lang {
+  display: block;
+  position: absolute;
+  right: 40px;
+  top: 35px;
+  color: #000;
+  font-family: 'museo_500';
+  text-decoration: none;
+}
+
+.step-nav {
+  display: block;
+  margin: 0 auto;
+  width: 720px;
+  padding: 30px 0 0 0;
+}
+
+.step-nav__inner {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step-nav__item {
+  height: 40px;
+  display: inline-block;
+}
+.step-nav__item a {
+  color: #fff;
+  text-decoration: none;
+  font-family: 'museo_500';
+  font-size: 24px;
+  display: block;
+  position: relative;
+  height: 40px;
+  padding-top: 22px;
+  padding-left: 35px;
+}
+.step-nav__item a:after {
+  display: block;
+  position: absolute;
+  content: "";
+}
+
+.step-nav__item_1 a:after {
+  width: 35px;
+  height: 39px;
+  left: 0;
+  height: 0;
+  background-position: 0 -416px;
+}
+
+/* ============================================================================
+		Layout: main
+============================================================================= */
+.page__main {
+  width: 800px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.irs {
+  position: relative;
+  display: block;
+}
+
+.irs-line {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.irs-line-left, .irs-line-mid, .irs-line-right {
+  position: absolute;
+  display: block;
+  top: 0;
+}
+
+.irs-line-left {
+  left: 0;
+  width: 10%;
+}
+
+.irs-line-mid {
+  left: 10%;
+  width: 80%;
+}
+
+.irs-line-right {
+  right: 0;
+  width: 10%;
+}
+
+.irs-diapason {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 100%;
+}
+
+.irs-slider {
+  position: absolute;
+  display: block;
+  cursor: default;
+  z-index: 1;
+}
+
+.irs-slider.single {
+  left: 10px;
+}
+
+.irs-slider.single:before {
+  position: absolute;
+  display: block;
+  content: "";
+  top: -30%;
+  left: -30%;
+  width: 160%;
+  height: 160%;
+  background: rgba(0, 0, 0, 0);
+}
+
+.irs-slider.from {
+  left: 100px;
+}
+
+.irs-slider.from:before {
+  position: absolute;
+  display: block;
+  content: "";
+  top: -30%;
+  left: -30%;
+  width: 130%;
+  height: 160%;
+  background: rgba(0, 0, 0, 0);
+}
+
+.irs-slider.to {
+  left: 300px;
+}
+
+.irs-slider.to:before {
+  position: absolute;
+  display: block;
+  content: "";
+  top: -30%;
+  left: 0;
+  width: 130%;
+  height: 160%;
+  background: rgba(0, 0, 0, 0);
+}
+
+.irs-slider.last {
+  z-index: 2;
+}
+
+.irs-min {
+  position: absolute;
+  display: block;
+  left: 0;
+  cursor: default;
+}
+
+.irs-max {
+  position: absolute;
+  display: block;
+  right: 0;
+  cursor: default;
+}
+
+.irs-from, .irs-to, .irs-single {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  cursor: default;
+  white-space: nowrap;
+}
+
+.irs-grid {
+  position: absolute;
+  display: none;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+}
+
+.irs-with-grid .irs-grid {
+  display: block;
+}
+
+.irs-grid-pol {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 8px;
+  background: #000;
+}
+
+.irs-grid-pol.small {
+  height: 4px;
+}
+
+.irs-grid-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100px;
+  white-space: nowrap;
+  text-align: center;
+  font-size: 9px;
+  line-height: 9px;
+  color: #000;
+}
+
+.irs-disable-mask {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: default;
+  background: rgba(0, 0, 0, 0);
+  z-index: 2;
+}
+
+.irs-disabled {
+  opacity: 0.4;
+}
+
+.irs-line-mid,
+.irs-line-left,
+.irs-line-right,
+.irs-diapason,
+.irs-slider {
+  background: url(../img/sprite-skin-simple.png) repeat-x;
+}
+
+.irs {
+  height: 40px;
+}
+
+.irs-with-grid {
+  height: 60px;
+}
+
+.irs-line {
+  height: 6px;
+  top: 25px;
+}
+
+.irs-line-left {
+  height: 6px;
+  background-position: 0 -30px;
+}
+
+.irs-line-mid {
+  height: 6px;
+  background-position: 0 0;
+}
+
+.irs-line-right {
+  height: 6px;
+  background-position: 100% -30px;
+}
+
+.irs-diapason {
+  height: 6px;
+  top: 25px;
+  background-position: 0 -60px;
+}
+
+.irs-slider {
+  width: 8px;
+  height: 15px;
+  top: 21px;
+  background-position: 0 -90px;
+}
+
+#irs-active-slider, .irs-slider:hover {
+  background-position: 0 -120px;
+}
+
+.irs-min, .irs-max {
+  color: #c0c0c0;
+  font-size: 10px;
+  line-height: 1.333;
+  text-shadow: none;
+  top: 0;
+  padding: 1px 3px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}
+
+.lt-ie9 .irs-min, .lt-ie9 .irs-max {
+  background: #3654b0;
+}
+
+.irs-from, .irs-to, .irs-single {
+  color: #000;
+  font-size: 10px;
+  line-height: 1.333;
+  text-shadow: none;
+  padding: 1px 5px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 3px;
+}
+
+.lt-ie9 .irs-from, .lt-ie9 .irs-to, .lt-ie9 .irs-single {
+  background: #d8dff3;
+}
+
+.irs-grid-pol {
+  background: #777;
+}
+
+.irs-grid-text {
+  color: #e0e0e0;
+}
+
+/* ============================================================================
+		Plugin: scroll
+============================================================================= */

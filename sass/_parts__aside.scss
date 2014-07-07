@@ -1,0 +1,52 @@
+/* ============================================================================
+    Layout: aside
+============================================================================= */
+.content__aside_left{
+  float: left;
+  width: 300px;
+  margin: 0 20px 0 0;
+}
+
+.nav-press-centre__inner{
+
+}
+.nav-press-centre{
+  border: 1px solid #d9d9d9;
+  margin: 0 0 15px;
+}
+.nav-press-centre__header{
+  padding: 10px 0 5px 30px;
+  h2{
+    font-family: "OpenSans", sans-serif;
+    color: #0085cc;
+    font-size: 17px;
+    text-transform: uppercase;
+  }
+}
+.nav-press-centre__inner{
+
+}
+.nav-press-centre__item{
+}
+.nav-press-centre__ln{
+  position: relative;
+  display: block;
+  text-decoration: none;
+  padding: 10px 45px;
+  &:hover, &.active{
+    background: #0085cd;
+    color: #ffffff;
+    &:after{
+      display: block;
+      position:absolute;
+      width: 21px;
+      height: 9px;
+      content: "";
+      right: 10px;
+      top: 50%;
+      margin-top: -4.5px;
+      @extend %iconsSprite;
+      background-position: sprite-position($icons, 'icons_06');
+    }
+  }
+}

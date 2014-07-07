@@ -1,0 +1,35 @@
+/* ============================================================================
+  Block: breadcrumb
+============================================================================= */
+.breadcrumb{
+  padding: 10px;
+  font-size: 12px;
+  li{
+    display: inline;
+  }
+}
+.breadcrumb__inner{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.breadcrumb__item{
+  color: #239eda;
+}
+.breadcrumb__ln{
+  position: relative;
+  padding: 0 15px 0 0;
+  &:after{
+    position: absolute;
+    top: 6px;
+    right: 0;
+    display: block;
+    width: 0;
+    height: 0;
+    border-width: 2px 0 2px 7px;
+    border-style: solid;
+    border-color: transparent transparent transparent #c8c4c1;
+    content: "";
+  }
+}
+/* @end */
