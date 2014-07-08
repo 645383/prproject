@@ -1,8 +1,3 @@
--#.images
--#  -#%img#boy{:src => "/assets/girl1.svg.png", :alt => "boy", :height => "250", :width => "130"}
--#  -#%img#girl{:src => "/assets/girl1.svg.png", :alt => "girl", :height => "250", :width => "130"}
--#
--#.result
 -#-locale = request.original_url.split("?locale=")[1]
 -#.form
 -#  = form_tag(countries_find_country_path(params.merge(locale: locale)), method: "post") do
@@ -44,10 +39,13 @@
 -#      = t('buttons.next')
 
 
-%h1.title_name Там ли ты живешь?
-%h2
-  Найди свое место в мире по
-  %br параметрам своего тела.
-%p
-  -locale = request.original_url.split("?locale=")[1]
-  = link_to "Пройти тест", base_test_form_path, class: "btn btn_color"
+
+
+
+
+%p.num_question - 1/6 -
+%h1.title_question Выберите свой рост
+%input#what-growth{:name => "example_name", :type => "text", :value => ""}/
+.clearfix
+  %a.btn.btn_color.block_left{:href => "#"} Назад
+  %a.btn.btn_color.block_right{:href => "#"} Далее

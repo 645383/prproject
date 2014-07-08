@@ -1,9 +1,10 @@
 PrProject::Application.routes.draw do
   #scope '/:locale' do
-    root to: 'base#index'
-    post 'countries/find_country'
-    get 'countries/show'
-    get 'base/select_language'
+  root to: 'base#index'
+  post 'countries/find_country'
+  get 'countries/show'
+  get 'base/select_language'
+  get 'base/test_form'
   #end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

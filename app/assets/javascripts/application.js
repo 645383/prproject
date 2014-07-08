@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require jquery.turbolinks
 //= require turbolinks
+//= require ion.rangeSlider.min
 //= require_tree .

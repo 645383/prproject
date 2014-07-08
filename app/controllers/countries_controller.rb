@@ -2,7 +2,7 @@ class CountriesController < ApplicationController
   include CountrySelector
 
   def show
-    @show_page = true
+    #@show_page = true
     @country = Country.find(params[:format]).name.to_sym
   rescue Exception => e
     flash[:notice] = e.message

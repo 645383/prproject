@@ -1,11 +1,16 @@
-.languages
-  = link_to 'English', root_path(locale: "en")
-  = link_to 'Русский', root_path(locale: 'ru')
+-#.languages
+-#  = link_to 'English', root_path(locale: "en")
+-#  = link_to 'Русский', root_path(locale: 'ru')
+-#
+-#.social-likes{title: "#{t('share')}"}
+-#  .facebook Facebook
+-#  .vkontakte    Вконтакте
+-#  .odnoklassniki    Одноклассники
+-#
+-#- flash.each do |name, msg|
+-#  = content_tag :div, msg, class: name
 
-.social-likes{title: "#{t('share')}"}
-  .facebook Facebook
-  .vkontakte    Вконтакте
-  .odnoklassniki    Одноклассники
-
-- flash.each do |name, msg|
-  = content_tag :div, msg, class: name
+.page__header
+  %a.logo{:href => "#"} CHI softwear
+  = render 'layouts/items' if request.original_url.match /test_form/
+  %a.lang{:href => "#"} EN
