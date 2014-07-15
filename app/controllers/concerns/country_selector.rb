@@ -4,7 +4,7 @@ module CountrySelector
   end
 
   def select_country(params)
-
+    debugger
     params = check_exceptional_params params
 
     gender = params[:gender].to_i == 1 ? 'first' : 'last'

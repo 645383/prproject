@@ -12,5 +12,6 @@
  *= require ion.rangeSlider.css
  *= require ion.rangeSlider.skinSimple
  *= require ion.rangeSlider.skinNice
+ *= require style.css
  *= require_tree .
  */

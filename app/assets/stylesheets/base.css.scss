@@ -1,158 +1,160 @@
-// Place all the styles related to the Base controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-.form {
-  width: 450px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  margin-top: -9px;
-  margin-left: -225px;
-  #id_height, #id_weight, #id_body_type, #id_color_hair, #id_submit {
-    text-align: center;
-    display: none;
-    font-size: 30px;
-    font-style: italic;
-    font-family: times, sans-serif;
-  }
+#id_weight, #id_submit {
+  display: none;
 }
 
-.first.current {
-  width: 400px;
-  text-align: center;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  margin-top: -9px;
-  margin-left: -200px;
-  font-size: 30px;
-  font-style: italic;
-  font-family: times, sans-serif;
-}
-
-.buttons {
-  width: 200px;
-  text-align: center;
-  position: fixed;
-  top: 60%;
-  left: 50%;
-  margin-top: -12px;
-  margin-left: -100px;
-  display: inline;
-}
-
-#id_submit {
-  width: 80px;
-  text-align: center;
-  position: fixed;
-  top: 45%;
-  left: 50%;
-  margin-top: -13px;
-  margin-left: -40px;
-}
-
-.list {
-  text-align: left;
-  line-height: 50px;
-  padding: 10px 60px;
-  margin: 0 10px 0 0;
-}
-
-.notice {
-  width: 450px;
-  text-align: center;
-  position: fixed;
-  top: 36%;
-  left: 50%;
-  margin-top: -9px;
-  margin-left: -225px;
-  background-color: pink;
-}
-
-#country {
-  width: 450px;
-  position: fixed;
-  text-align: center;
-  top: 40%;
-  left: 50%;
-  margin-top: -9px;
-  margin-left: -225px;
-}
-
-.result {
-  width: 420px;
-  text-align: left;
-  position: fixed;
-  top: 50%;
-  left: 5%;
-  margin-top: -175px;
-  margin-left: -25px;
-}
-
-p {
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-  display: inline-block;
-}
-
-.passed {
-  background-color: greenyellow;
-  width: 35px;
-  text-align: center;
-  border: 2px solid;
-  border-radius: 25px;
-}
-
-.failed {
-  background-color: orangered;
-  width: 35px;
-  text-align: center;
-  border: 2px solid;
-  border-radius: 25px;
-}
-
-.images {
-  position: fixed;
-  top: 10%;
-  left: 70%;
-}
-
-.showpage {
-  background-image: url("/assets/globe.svg.png");
-  background-repeat: no-repeat;
-  background-size: 100%;
-}
-
-.languages {
-  position: fixed;
-  top: 3%;
-  right: 3%;
-}
-
-.body_types_images {
-  position: fixed;
-  top: 75%;
-  left: 50%;
-  width: 450px;
-  //  margin-top: -12px;
-  margin-left: -225px;
-
-  #slim, #normal, #fat {
-    width: 115px;
-    display: inline;
-    border-radius: 10px;
-    font-size: 20px;
-  }
-  //  #suggest {
-  //    display: inline-block;
-  //  }
-}
-
-.logo {
-  position: fixed;
-  right: 3%;
-}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//.form {
+//  width: 450px;
+//  position: fixed;
+//  top: 50%;
+//  left: 50%;
+//  margin-top: -9px;
+//  margin-left: -225px;
+//  #id_height, #id_weight, #id_body_type, #id_color_hair, #id_submit {
+//    text-align: center;
+//    display: none;
+//    font-size: 30px;
+//    font-style: italic;
+//    font-family: times, sans-serif;
+//  }
+//}
+//
+//.first.current {
+//  width: 400px;
+//  text-align: center;
+//  position: fixed;
+//  top: 50%;
+//  left: 50%;
+//  margin-top: -9px;
+//  margin-left: -200px;
+//  font-size: 30px;
+//  font-style: italic;
+//  font-family: times, sans-serif;
+//}
+//
+//.buttons {
+//  width: 200px;
+//  text-align: center;
+//  position: fixed;
+//  top: 60%;
+//  left: 50%;
+//  margin-top: -12px;
+//  margin-left: -100px;
+//  display: inline;
+//}
+//
+//#id_submit {
+//  width: 80px;
+//  text-align: center;
+//  position: fixed;
+//  top: 45%;
+//  left: 50%;
+//  margin-top: -13px;
+//  margin-left: -40px;
+//}
+//
+//.list {
+//  text-align: left;
+//  line-height: 50px;
+//  padding: 10px 60px;
+//  margin: 0 10px 0 0;
+//}
+//
+//.notice {
+//  width: 450px;
+//  text-align: center;
+//  position: fixed;
+//  top: 36%;
+//  left: 50%;
+//  margin-top: -9px;
+//  margin-left: -225px;
+//  background-color: pink;
+//}
+//
+//#country {
+//  width: 450px;
+//  position: fixed;
+//  text-align: center;
+//  top: 40%;
+//  left: 50%;
+//  margin-top: -9px;
+//  margin-left: -225px;
+//}
+//
+//.result {
+//  width: 420px;
+//  text-align: left;
+//  position: fixed;
+//  top: 50%;
+//  left: 5%;
+//  margin-top: -175px;
+//  margin-left: -25px;
+//}
+//
+//p {
+//  margin-left: auto;
+//  margin-right: auto;
+//  width: 50%;
+//  display: inline-block;
+//}
+//
+//.passed {
+//  background-color: greenyellow;
+//  width: 35px;
+//  text-align: center;
+//  border: 2px solid;
+//  border-radius: 25px;
+//}
+//
+//.failed {
+//  background-color: orangered;
+//  width: 35px;
+//  text-align: center;
+//  border: 2px solid;
+//  border-radius: 25px;
+//}
+//
+//.images {
+//  position: fixed;
+//  top: 10%;
+//  left: 70%;
+//}
+//
+//.showpage {
+//  background-image: url("/assets/globe.svg.png");
+//  background-repeat: no-repeat;
+//  background-size: 100%;
+//}
+//
+//.languages {
+//  position: fixed;
+//  top: 3%;
+//  right: 3%;
+//}
+//
+//.body_types_images {
+//  position: fixed;
+//  top: 75%;
+//  left: 50%;
+//  width: 450px;
+//  //  margin-top: -12px;
+//  margin-left: -225px;
+//
+//  #slim, #normal, #fat {
+//    width: 115px;
+//    display: inline;
+//    border-radius: 10px;
+//    font-size: 20px;
+//  }
+//  //  #suggest {
+//  //    display: inline-block;
+//  //  }
+//}
+//
+//.logo {
+//  position: fixed;
+//  right: 3%;
+//}
 
 //.inde0xpage {
 ////  background-color: #e2e2e2;
