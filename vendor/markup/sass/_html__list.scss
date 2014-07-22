@@ -1,0 +1,48 @@
+/* ============================================================================
+		html list
+============================================================================= */
+.selection-list{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-align: justify;
+}
+.selection-list__item{
+	display: inline-block;
+	text-align: left;
+	width: 230px;
+	  input[type="radio"]{
+		display: none;
+	  }
+	  label{
+	  	overflow: hidden;
+	  	display: block;
+	  	width: 230px;
+		border: 4px solid #fff;
+		background: #fff;
+		@include border-radius(10px);
+		@include background-clip(padding-box);
+		@include box-shadow(0 1px 2px rgba(1,1,1,.39));
+		cursor: pointer;
+		span{
+			display: block;
+			padding: 5px 0 0 0;
+			text-align: center;
+			font-size: 22px;
+			font-family: 'museo_100';
+			line-height: 30px;
+			text-transform: uppercase;
+
+		}
+	  }
+	  input[type="radio"]:checked+label{
+		@include box-shadow(0 1px 2px rgba(1,1,1,.39), 0 0 21px rgba(36,160,238,.53));
+
+	  }
+	  input[type="radio"]:disabled+label{
+
+	  }
+}
+.selection-list__item_sizer{
+	width: 100%;
+}
