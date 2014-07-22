@@ -1,212 +1,137 @@
-/* Ion.RangeSlider
-// css version 1.8.5
-// by Denis Ineshin | ionden.com
-// ===================================================================================================================*/
 
-/* =====================================================================================================================
-// RangeSlider */
-
-.irs {
-    position: relative; display: block;
+/* Functional styling;
+ * These styles are required for noUiSlider to function.
+ * You don't need to change these rules to apply your design.
+ */
+.noUi-target,
+.noUi-target * {
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-ms-touch-action: none;
+-ms-user-select: none;
+-moz-user-select: none;
+-moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
-    .irs-line {
-        position: relative; display: block;
-        overflow: hidden;
-    }
-        .irs-line-left, .irs-line-mid, .irs-line-right {
-            position: absolute; display: block;
-            top: 0;
-        }
-        .irs-line-left {
-            left: 0; width: 10%;
-        }
-        .irs-line-mid {
-            left: 10%; width: 80%;
-        }
-        .irs-line-right {
-            right: 0; width: 10%;
-        }
-
-    .irs-diapason {
-        position: absolute; display: block;
-        left: 0; width: 100%;
-    }
-    .irs-slider {
-        position: absolute; display: block;
-        cursor: default;
-        z-index: 1;
-    }
-        .irs-slider.single {
-            left: 10px;
-        }
-            .irs-slider.single:before {
-                position: absolute; display: block; content: "";
-                top: -30%; left: -30%;
-                width: 160%; height: 160%;
-                background: rgba(0,0,0,0.0);
-            }
-        .irs-slider.from {
-            left: 100px;
-        }
-            .irs-slider.from:before {
-                position: absolute; display: block; content: "";
-                top: -30%; left: -30%;
-                width: 130%; height: 160%;
-                background: rgba(0,0,0,0.0);
-            }
-        .irs-slider.to {
-            left: 300px;
-        }
-            .irs-slider.to:before {
-                position: absolute; display: block; content: "";
-                top: -30%; left: 0;
-                width: 130%; height: 160%;
-                background: rgba(0,0,0,0.0);
-            }
-        .irs-slider.last {
-            z-index: 2;
-        }
-
-    .irs-min {
-        position: absolute; display: block;
-        left: 0;
-        cursor: default;
-    }
-    .irs-max {
-        position: absolute; display: block;
-        right: 0;
-        cursor: default;
-    }
-
-    .irs-from, .irs-to, .irs-single {
-        position: absolute; display: block;
-        top: 0; left: 0;
-        cursor: default;
-        white-space: nowrap;
-    }
-
-
-.irs-grid {
-    position: absolute; display: none;
-    bottom: 0; left: 0;
-    width: 100%; height: 20px;
+.noUi-base {
+    width: 100%;
+    height: 100%;
+    position: relative;
 }
-.irs-with-grid .irs-grid {
-    display: block;
+.noUi-origin {
+    position: absolute;
+    right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
 }
-    .irs-grid-pol {
-        position: absolute;
-        top: 0; left: 0;
-        width: 1px; height: 8px;
-        background: #000;
-    }
-    .irs-grid-pol.small {
-        height: 4px;
-    }
-    .irs-grid-text {
-        position: absolute;
-        bottom: 0; left: 0;
-        width: 100px;
-        white-space: nowrap;
-        text-align: center;
-        font-size: 9px; line-height: 9px;
-        color: #000;
-    }
+.noUi-handle {
+    position: relative;
+    z-index: 1;
+}
+.noUi-stacking .noUi-handle {
+/* This class is applied to the lower origin when
+   its values is > 50%. */
+    z-index: 10;
+}
+.noUi-stacking + .noUi-origin {
+/* Fix stacking order in IE7, which incorrectly
+   creates a new context for the origins. */
+    *z-index: -1;
+}
+.noUi-state-tap .noUi-origin {
+-webkit-transition: left 0.3s, top 0.3s;
+    transition: left 0.3s, top 0.3s;
+}
+.noUi-state-drag * {
+    cursor: inherit !important;
+}
 
-.irs-disable-mask {
-    position: absolute; display: block;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
+/* Slider size and handle placement;
+ */
+.noUi-horizontal {
+    height: 11px;
+    margin-bottom: 40px;
+}
+.noUi-horizontal .noUi-handle {
+    position: relative;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 15px 10px 0 10px;
+    border-color: #24a1ee transparent transparent transparent;
+}
+.noUi-handle__value{
+    position: absolute;
+    
+}
+.noUi-horizontal.noUi-extended {
+    padding: 0 15px;
+}
+.noUi-horizontal.noUi-extended .noUi-origin  {
+    right: -15px;
+}
+.noUi-vertical {
+    width: 18px;
+}
+.noUi-vertical .noUi-handle {
+    width: 28px;
+    height: 34px;
+    left: -6px;
+    top: -17px;
+}
+.noUi-vertical.noUi-extended {
+    padding: 15px 0;
+}
+.noUi-vertical.noUi-extended .noUi-origin  {
+    bottom: -15px;
+}
+
+/* Styling;
+ */
+.noUi-background {
+    background: #FAFAFA;
+    box-shadow: inset 0 1px 1px #f0f0f0;
+}
+.noUi-connect {
+    background: #b9bbde;
+    @include border-radius(5px);
+}
+.noUi-origin {
+    @include border-radius(5px);
+}
+.noUi-target {
+
+}
+.noUi-target.noUi-connect {
+}
+
+/* Handles and cursors;
+ */
+.noUi-dragable {
+    cursor: w-resize;
+}
+.noUi-vertical .noUi-dragable {
+    cursor: n-resize;
+}
+.noUi-handle {
     cursor: default;
-    background: rgba(0,0,0,0.0);
-    z-index: 2;
 }
-.irs-disabled {
-    opacity: 0.4;
-}
-/* Ion.RangeSlider, Simple Skin
-// css version 1.8.5
-// by Denis Ineshin | ionden.com
-// ===================================================================================================================*/
-
-/* =====================================================================================================================
-// Skin details */
-
-.irs-line-mid,
-.irs-line-left,
-.irs-line-right,
-.irs-diapason,
-.irs-slider {
-    background: url(../img/sprite-skin-simple.png) repeat-x;
+.noUi-active {
 }
 
-.irs {
-    height: 40px;
-}
-.irs-with-grid {
-    height: 60px;
-}
-.irs-line {
-    height: 6px; top: 25px;
-}
-    .irs-line-left {
-        height: 6px;
-        background-position: 0 -30px;
-    }
-    .irs-line-mid {
-        height: 6px;
-        background-position: 0 0;
-    }
-    .irs-line-right {
-        height: 6px;
-        background-position: 100% -30px;
-    }
-
-.irs-diapason {
-    height: 6px; top: 25px;
-    background-position: 0 -60px;
+/* Handle stripes;
+ */
+.noUi-handle:after {
 }
 
-.irs-slider {
-    width: 8px; 
-    height: 15px;
-    top: 21px;
-    background-position: 0 -90px;
-}
-#irs-active-slider, .irs-slider:hover {
-    background-position: 0 -120px;
-}
 
-.irs-min, .irs-max {
-    color: #c0c0c0;
-    font-size: 10px; line-height: 1.333;
-    text-shadow: none;
-    top: 0; padding: 1px 3px;
-    background: rgba(0,0,0,0.1);
-    border-radius: 3px;
+/* Disabled state;
+ */
+[disabled].noUi-connect,
+[disabled] .noUi-connect {
+    background: #B8B8B8;
 }
-.lt-ie9 .irs-min, .lt-ie9 .irs-max {
-    background: #3654b0;
-}
-
-.irs-from, .irs-to, .irs-single {
-    color: #000;
-    font-size: 10px; line-height: 1.333;
-    text-shadow: none;
-    padding: 1px 5px;
-    background: rgba(255,255,255,0.8);
-    border-radius: 3px;
-}
-.lt-ie9 .irs-from, .lt-ie9 .irs-to, .lt-ie9 .irs-single {
-    background: #d8dff3;
-}
-
-.irs-grid-pol {
-    background: #777;
-}
-.irs-grid-text {
-    color: #e0e0e0;
-}
-
-.irs-disabled {
+[disabled] .noUi-handle {
+    cursor: not-allowed;
 }

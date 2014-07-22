@@ -14,6 +14,7 @@
   @import "html__typography__basic";
 
   @import "html__global";
+  @import "html__list";
 
   @import "parts__header";
   @import "parts__main";
@@ -27,7 +28,7 @@
 // Plugins
 // -----------------------------------------------------------------------------
 
-  @import "plugins__scroll";
+  //@import "plugins__scroll";
 
 // Print styles
 // -----------------------------------------------------------------------------
