@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  height: 1
+  color_hair: MyText
+  physique: MyText
+  country_id: 1
+  gender: MyString
+
+two:
+  height: 1
+  color_hair: MyText
+  physique: MyText
+  country_id: 1
+  gender: MyString

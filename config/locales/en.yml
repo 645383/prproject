@@ -1,0 +1,56 @@
+en:
+  gender:
+    male: "Male"
+    female: "Female"
+  features:
+    height: "Height"
+    weight: "Weight"
+    body_type: "Body type"
+    slim: "slim"
+    normal: "normal"
+    fat: "fat"
+  hair_colors:
+    hair_color: "Hair color"
+    black: "black"
+    black_w: "black wavy"
+    brown: "brown"
+    brown_w: "brown wavy"
+    red: "red"
+    blond: "blond"
+  buttons:
+    submit: "Submit"
+    prev: "Previous"
+    next: "Next"
+    again: "Try again"
+  country: "! Are you from there?"
+  warn:
+    who: "Better to choose male or female"
+    height: "Indicate your height"
+    weight: "Indicate your weight"
+  answer:
+    who: "Who are you"
+    male: "You are man"
+    female: "You are female"
+    height: "Your height is "
+    weight: "Your weight is "
+    body:  "Your body type is "
+    hair:  "Your hair color is "
+  bodies:
+    fat: "fat"
+    slim: "slim"
+    normal: "normal"
+  colors:
+    red: "red"
+    black: "black"
+    b_w: "black wavy"
+    brown: "brown"
+    br_w: "brown wavy"
+    blond: "blond"
+  exceptions:
+    no_input: "Empty fields not allowed. Please, try again."
+    height_s: "Sorry, height input is not correct"
+    height_b: "Sorry, height input is not correct"
+    weight_s: "Sorry, weight input is not correct"
+    weight_b: "Sorry, weight input is not correct"
+  share: "Share us with your friends"
+  suggest: "Probably this is body type you have"

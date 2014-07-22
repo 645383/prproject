@@ -1,0 +1,8 @@
+-locale = request.original_url.split("?locale=")[1]
+
+-#-debugger
+.buttons
+  =link_to t('buttons.again'), root_path(locale: locale)
+#country
+  ="#{t(@country, :scope => :countries)}#{t('country')}"
+
