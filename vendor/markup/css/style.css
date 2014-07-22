@@ -1,0 +1,585 @@
+/* ============================================================================
+	Custom style
+============================================================================= */
+.step-nav__item a:after {
+  background-image: url('../img/icons-sd1a44a34db.png');
+  background-repeat: no-repeat;
+}
+
+/* ============================================================================
+		Fonts
+============================================================================= */
+@font-face {
+  font-family: 'museo_500';
+  src: url("../fonts/museosanscyrl-500-webfont.eot");
+  src: url("../fonts/museosanscyrl-500-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/museosanscyrl-500-webfont.woff") format("woff"), url("../fonts/museosanscyrl-500-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'pf_regal';
+  src: url("../fonts/pfregaltextpro-ublack-webfont.eot");
+  src: url("../fonts/pfregaltextpro-ublack-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/pfregaltextpro-ublack-webfont.woff") format("woff"), url("../fonts/pfregaltextpro-ublack-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'museo_100';
+  src: url("../fonts/museosanscyrl-100-webfont.eot");
+  src: url("../fonts/museosanscyrl-100-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/museosanscyrl-100-webfont.woff") format("woff"), url("../fonts/museosanscyrl-100-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ============================================================================
+		Typography
+============================================================================= */
+h2, .h2 {
+  margin: 0 0 45px;
+}
+
+p,
+pre,
+blockquote,
+table {
+  margin: 0;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before,
+q:after {
+  content: '';
+}
+
+blockquote {
+  margin: rhythm(1) 4.2em 0;
+}
+
+strong,
+b {
+  font-weight: bold;
+}
+
+.title_name {
+  font-family: 'pf_regal';
+  font-size: 52px;
+}
+
+.text_center {
+  text-align: center;
+}
+
+.text_left {
+  text-align: left;
+}
+
+.text_right {
+  text-align: right;
+}
+
+.num_question {
+  padding: 75px 0 0 0;
+  text-align: center;
+  font-family: 'pf_regal';
+  font-size: 24px;
+}
+
+.title_question {
+  text-align: center;
+  font-family: 'pf_regal';
+  font-size: 52px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 15px 35px;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  font-size: 16px;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-family: 'museo_500';
+}
+
+.btn_color {
+  background-color: #249fed;
+  color: #fff;
+}
+
+.ie6-7 a * {
+  cursor: pointer;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none !important;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  font-size: 62.5%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  min-height: 100%;
+  min-width: 1000px;
+  background-color: #fff;
+  color: #000;
+  font-size: 14px;
+  font-family: 'museo_100';
+  line-height: 1.42857143;
+}
+
+input,
+button,
+select,
+textarea {
+  font-size: inherit;
+  font-family: inherit;
+  line-height: inherit;
+}
+
+figure {
+  margin: 0;
+}
+
+img {
+  vertical-align: middle;
+}
+
+.clearfix:before, .clearfix:after {
+  display: table;
+  content: " ";
+}
+.clearfix:after {
+  clear: both;
+}
+
+.block_left {
+  float: left !important;
+}
+
+.block_right {
+  float: right !important;
+}
+
+.block_center {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 10px;
+  width: 1000px;
+}
+
+.page {
+  height: 100%;
+}
+
+.page_index {
+  background: url("../img/bg_index.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.page_second {
+  background: #c8cbef;
+}
+
+/* ============================================================================
+		html list
+============================================================================= */
+.selection-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: justify;
+}
+
+.selection-list__item {
+  display: inline-block;
+  text-align: left;
+  width: 230px;
+}
+.selection-list__item input[type="radio"] {
+  display: none;
+}
+.selection-list__item label {
+  overflow: hidden;
+  display: block;
+  width: 230px;
+  border: 4px solid #fff;
+  background: #fff;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-background-clip: padding;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  -webkit-box-shadow: 0 1px 2px rgba(1, 1, 1, 0.39);
+  -moz-box-shadow: 0 1px 2px rgba(1, 1, 1, 0.39);
+  box-shadow: 0 1px 2px rgba(1, 1, 1, 0.39);
+  cursor: pointer;
+}
+.selection-list__item label span {
+  display: block;
+  padding: 5px 0 0 0;
+  text-align: center;
+  font-size: 22px;
+  line-height: 30px;
+  text-transform: uppercase;
+}
+.selection-list__item input[type="radio"]:checked + label {
+  -webkit-box-shadow: 0 1px 2px rgba(1, 1, 1, 0.39), 0 0 21px rgba(36, 160, 238, 0.53);
+  -moz-box-shadow: 0 1px 2px rgba(1, 1, 1, 0.39), 0 0 21px rgba(36, 160, 238, 0.53);
+  box-shadow: 0 1px 2px rgba(1, 1, 1, 0.39), 0 0 21px rgba(36, 160, 238, 0.53);
+}
+
+.selection-list__item_sizer {
+  width: 100%;
+}
+
+/* ============================================================================
+    Layout: header
+============================================================================= */
+.page__header {
+  position: relative;
+  height: 100px;
+  background: rgba(254, 254, 254, 0.1);
+}
+
+.logo {
+  display: block;
+  position: absolute;
+  width: 39px;
+  height: 35px;
+  left: 40px;
+  top: 35px;
+  background: url("../img/logo.png") no-repeat;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.lang {
+  display: block;
+  position: absolute;
+  right: 40px;
+  top: 35px;
+  color: #000;
+  font-family: 'museo_500';
+  text-decoration: none;
+}
+
+.step-nav {
+  display: block;
+  margin: 0 auto;
+  width: 720px;
+  padding: 30px 40px 0 40px;
+}
+
+.step-nav__inner {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: justify;
+}
+
+.step-nav__item {
+  height: 40px;
+  display: inline-block;
+  text-align: left;
+}
+.step-nav__item a {
+  color: #fff;
+  text-decoration: none;
+  font-family: 'museo_500';
+  font-size: 24px;
+  display: block;
+  position: relative;
+  height: 40px;
+  padding-top: 22px;
+}
+.step-nav__item a:after {
+  display: block;
+  position: absolute;
+  content: "";
+}
+
+.step-nav__item_sizer {
+  width: 100%;
+}
+
+.step-nav__item_1 a {
+  padding-left: 30px;
+}
+.step-nav__item_1 a:hover:after {
+  background-position: 0 -297px;
+}
+.step-nav__item_1 a:after {
+  width: 26px;
+  height: 36px;
+  left: 0;
+  top: 0;
+  background-position: 0 -473px;
+}
+
+.step-nav__item_2 a {
+  padding-left: 25px;
+}
+.step-nav__item_2 a:hover:after {
+  background-position: 0 -353px;
+}
+.step-nav__item_2 a:after {
+  width: 16px;
+  height: 40px;
+  left: 0;
+  top: 0;
+  background-position: 0 -413px;
+}
+
+.step-nav__item_3 a {
+  padding-left: 50px;
+}
+.step-nav__item_3 a:hover:after {
+  background-position: 0 0;
+}
+.step-nav__item_3 a:after {
+  width: 48px;
+  height: 41px;
+  left: 0;
+  top: 0;
+  background-position: 0 -61px;
+}
+
+.step-nav__item_4 a {
+  padding-left: 32px;
+}
+.step-nav__item_4 a:hover:after {
+  background-position: 0 -529px;
+}
+.step-nav__item_4 a:after {
+  width: 30px;
+  height: 39px;
+  left: 0;
+  top: 0;
+  background-position: 0 -588px;
+}
+
+.step-nav__item_5 a {
+  padding-left: 35px;
+  padding-left: 35px;
+}
+.step-nav__item_5 a:hover:after {
+  background-position: 0 -122px;
+}
+.step-nav__item_5 a:after {
+  width: 35px;
+  height: 39px;
+  left: 0;
+  top: 0;
+  background-position: 0 -181px;
+}
+
+/* ============================================================================
+		Layout: main
+============================================================================= */
+.page__main {
+  width: 1000px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+/* Functional styling;
+ * These styles are required for noUiSlider to function.
+ * You don't need to change these rules to apply your design.
+ */
+.noUi-target,
+.noUi-target * {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -ms-touch-action: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.noUi-base {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.noUi-origin {
+  position: absolute;
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.noUi-handle {
+  position: relative;
+  z-index: 1;
+}
+
+.noUi-stacking .noUi-handle {
+  /* This class is applied to the lower origin when
+     its values is > 50%. */
+  z-index: 10;
+}
+
+.noUi-stacking + .noUi-origin {
+  /* Fix stacking order in IE7, which incorrectly
+     creates a new context for the origins. */
+  *z-index: -1;
+}
+
+.noUi-state-tap .noUi-origin {
+  -webkit-transition: left 0.3s, top 0.3s;
+  transition: left 0.3s, top 0.3s;
+}
+
+.noUi-state-drag * {
+  cursor: inherit !important;
+}
+
+/* Slider size and handle placement;
+ */
+.noUi-horizontal {
+  height: 11px;
+  margin-bottom: 40px;
+}
+
+.noUi-horizontal .noUi-handle {
+  position: relative;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 15px 10px 0 10px;
+  border-color: #24a1ee transparent transparent transparent;
+}
+
+.noUi-handle__value {
+  position: absolute;
+}
+
+.noUi-horizontal.noUi-extended {
+  padding: 0 15px;
+}
+
+.noUi-horizontal.noUi-extended .noUi-origin {
+  right: -15px;
+}
+
+.noUi-vertical {
+  width: 18px;
+}
+
+.noUi-vertical .noUi-handle {
+  width: 28px;
+  height: 34px;
+  left: -6px;
+  top: -17px;
+}
+
+.noUi-vertical.noUi-extended {
+  padding: 15px 0;
+}
+
+.noUi-vertical.noUi-extended .noUi-origin {
+  bottom: -15px;
+}
+
+/* Styling;
+ */
+.noUi-background {
+  background: #FAFAFA;
+  box-shadow: inset 0 1px 1px #f0f0f0;
+}
+
+.noUi-connect {
+  background: #b9bbde;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.noUi-origin {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+
+/* Handles and cursors;
+ */
+.noUi-dragable {
+  cursor: w-resize;
+}
+
+.noUi-vertical .noUi-dragable {
+  cursor: n-resize;
+}
+
+.noUi-handle {
+  cursor: default;
+}
+
+/* Handle stripes;
+ */
+/* Disabled state;
+ */
+[disabled].noUi-connect,
+[disabled] .noUi-connect {
+  background: #B8B8B8;
+}
+
+[disabled] .noUi-handle {
+  cursor: not-allowed;
+}
+
+/* ============================================================================
+		Plugin: scroll
+============================================================================= */
