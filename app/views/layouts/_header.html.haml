@@ -11,6 +11,10 @@
 -#  = content_tag :div, msg, class: name
 
 .page__header
-  %a.logo{:href => "#"} CHI softwear
+  =link_to "CHI softwear", root_path, class: "logo"
+  -#%a.logo{:href => "#"} CHI softwear
   = render 'layouts/items' if request.original_url.match /test_form/
-  %a.lang{:href => "#"} EN
+  -if request.original_url.split("?locale=")[1] == "ru"
+    =link_to "EN", root_path(locale: "en"), class: "lang"
+  -else
+    =link_to "RU", root_path(locale: "ru"), class: "lang"

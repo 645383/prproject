@@ -9,9 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require ion.rangeSlider.css
- *= require ion.rangeSlider.skinSimple
- *= require ion.rangeSlider.skinNice
+ *= require jquery.nouislider
  *= require style.css
  *= require_tree .
  */

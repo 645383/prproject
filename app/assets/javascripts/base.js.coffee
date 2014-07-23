@@ -1,36 +1,89 @@
-$(document).ready ->
-  $("#what-growth").ionRangeSlider
-    min: 100,
-    max: 250,
-    step: 1,
-    postfix: "",
-    from: 170,
-    prettify: false,
-    hasGrid: false
+$(document).on "page:change", ->
 
-  $("#what-weight").ionRangeSlider
-    min: 30,
-    max: 150,
-    step: 1,
-    postfix: "",
-    from: 65,
-    prettify: false,
-    hasGrid: false
+  $('#what-growth').noUiSlider
+    start: 150,
+    connect: "lower",
+    range:
+      'min': 100,
+      'max': 250
 
-  $(".btn.btn_color.block_left").hide() if $(".first").hasClass("current")
+  $('#what-weight').noUiSlider
+    start: 70,
+    connect: "lower",
+    range:
+      'min': 30,
+      'max': 150
+
+  $('#what-growth .noUi-handle.noUi-handle-lower').html "<div id='slider_growth'>150</div>"
+  $('#what-weight .noUi-handle.noUi-handle-lower').html("<div id='slider_weight'>70</div>")
+  $('.step-nav__item.step-nav__item_1 a').html("70")
+  $('.step-nav__item.step-nav__item_2 a').html("38")
+  $('.step-nav__item.step-nav__item_3 a').html("Женщина")
+  $('.step-nav__item.step-nav__item_4 a').html("Нормальное")
+  $('.step-nav__item.step-nav__item_5 a').html("150")
+
+  initialize
+
+  $('#what-growth').change ->
+    valueGrowth = parseInt $('#what-growth').val()
+    $('#slider_growth').html(valueGrowth)
+    $('.step-nav__item.step-nav__item_5 a').html(valueGrowth)
+
+
+  $('#what-weight').change ->
+    valueWeight = parseInt $('#what-weight').val()
+    $('#slider_weight').html(valueWeight)
+    $('.step-nav__item.step-nav__item_1 a').html(valueWeight)
+
+  $('#gender1').click ->
+    $('.step-nav__item.step-nav__item_3 a').html('Женщина')
+  $('#gender2').click ->
+    $('.step-nav__item.step-nav__item_3 a').html('Мужчина')
+
+  $(".btn.btn_color.block_left").hide() if $(".height").hasClass("current")
 
   $(".btn.btn_color.block_right").click ->
-    current = $(".current").removeClass("current").hide().next().slideDown().addClass("current")
-    $(".btn.btn_color.block_right").hide() if $(".last").hasClass("current")
-    $(".btn.btn_color.block_left").show()
-
-
+    $(".current").removeClass("current").hide().next().slideDown().addClass("current")
+    hideButton()
+    $('#what-growth-input').val($('#what-growth').val())
+    $('#what-weight-input').val($('#what-weight').val())
 
 
   $(".btn.btn_color.block_left").click ->
     $(".current").removeClass("current").hide().prev().slideDown().addClass "current"
-    $(".btn.btn_color.block_left").hide() if $(".first").hasClass("current")
-    $(".btn.btn_color.block_right").show()
+    hideButton()
+
+
+  $('.step-nav__item a').click ->
+    this.href = "javascript:void(0)"
+    $(".current").removeClass("current").hide()
+    id_name = this.id
+    $("." + id_name).slideDown().addClass("current")
+    hideButton()
+
+  hideButton = ->
+    numberOfQuests()
+    if $(".height").hasClass("current")
+      $(".btn.btn_color.block_left").hide()
+      $(".btn.btn_color.block_right").show()
+    else if $(".submit").hasClass("current")
+      $('.num_question').hide()
+      $(".btn.btn_color.block_right").hide()
+      $(".btn.btn_color.block_left").show()
+    else
+      $(".btn.btn_color.block_right").show()
+      $(".btn.btn_color.block_left").show()
+
+  numberOfQuests = ->
+    $.each $('form').children(), (index, value) ->
+      $('.num_question').text "- " + index + "/6 -" if value.className.indexOf("current") >= 0
+      $('.num_question').show()
+
+  initialize = ->
+
+    $('.num_question').text "- 1/6 -"
+
+
 
 ########################################################################################################################
 

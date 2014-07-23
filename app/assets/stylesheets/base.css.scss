@@ -1,6 +1,13 @@
-#id_weight, #id_submit {
+.weight, .submit, .hair_color, .gender {
   display: none;
 }
+
+#slider{
+  width: 30px;
+  height: 20px;
+  background-color: white;
+}
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //.form {

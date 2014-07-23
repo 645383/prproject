@@ -4,7 +4,7 @@ class CountriesController < ApplicationController
   def show
     #@show_page = true
     @country = Country.find(params[:format]).name.to_sym
-      debugger
+      #debugger
 
   rescue Exception => e
     flash[:notice] = e.message
@@ -12,7 +12,6 @@ class CountriesController < ApplicationController
   end
 
   def find_country
-    debugger
     redirect_to countries_show_path(select_country(params))
   rescue Error => e
     flash[:notice] = e.message

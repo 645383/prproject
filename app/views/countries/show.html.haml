@@ -2,7 +2,7 @@
 
 -#-debugger
 .buttons
-  =link_to t('buttons.again'), root_path(locale: locale)
+  =link_to t('buttons.again'), base_test_form_path(locale: locale)
 #country
   ="#{t(@country, :scope => :countries)}#{t('country')}"
 
