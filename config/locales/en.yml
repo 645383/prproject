@@ -37,9 +37,9 @@ en:
     body:  "Your body type is "
     hair:
   bodies:
-    fat: "fat"
-    slim: "slim"
-    normal: "normal"
+    fat: "Fat"
+    slim: "Slim"
+    normal: "Normal"
   colors:
     red: "Red"
     black: "Dark"
@@ -64,3 +64,5 @@ en:
     weight: "Choose your weight"
     hair: "Choose your hair color"
     gender: "Choose your gender"
+    foot_size: "Choose your foot size"
+    body_type: "Choose your body type"

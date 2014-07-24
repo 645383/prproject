@@ -52,6 +52,11 @@
       =t("questions.weight")
     #what-weight{name: "weight"}
     %input#what-weight-input{name: "weight", :type => "hidden", :value => ""}
+  .foot_size
+    %h1.title_question
+      =t("questions.foot_size")
+    #what-foot_size{name: "foot_size"}
+    %input#what-foot_size-input{name: "foot_size", :type => "hidden", :value => ""}
   .hair_color
     %h1.title_question
       =t("questions.hair")
@@ -100,10 +105,14 @@
                 =t("gender.male")
       %li.selection-list__item.selection-list__item_sizer
         \&nbsp;
+  .body_type
+    %h1.title_question
+      =t("questions.body_type")
+    #what-body_type{name: "body_type"}
+    %input#what-body_type-input{name: "body_type", :type => "hidden", :value => ""}
 
   #submit.submit
     =submit_tag t("buttons.submit")
-
 
 .clearfix
   %a.btn.btn_color.block_left

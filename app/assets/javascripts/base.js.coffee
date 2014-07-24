@@ -27,11 +27,29 @@ $(document).on "page:change", ->
       'min': 30,
       'max': 150
 
+  $('#what-foot_size').noUiSlider
+    start: 38,
+    connect: "lower",
+    range:
+      'min': 35,
+      'max': 45
+
+  $('#what-body_type').noUiSlider
+    start: 2,
+    connect: "lower",
+    range:
+      'min': 1,
+      'max': 3
+
   $('#what-growth .noUi-handle.noUi-handle-lower').html "<div id='slider_growth'>150</div>"
   $('#what-weight .noUi-handle.noUi-handle-lower').html("<div id='slider_weight'>70</div>")
+  $('#what-foot_size .noUi-handle.noUi-handle-lower').html("<div id='slider_foot_size'>38</div>")
+  $('#what-body_type .noUi-handle.noUi-handle-lower').html("<div id='slider_body_type'></div>")
+  $('#slider_body_type').html(I18n.t("bodies.normal"))
+
   $('.step-nav__item.step-nav__item_1 a').html("70")
   $('.step-nav__item.step-nav__item_2 a').html("38")
-  $('.step-nav__item.step-nav__item_3 a').html(I18n.translate("gender.female"))
+  $('.step-nav__item.step-nav__item_3 a').html(I18n.t("gender.female"))
   $('.step-nav__item.step-nav__item_4 a').html(I18n.t("features.normal"))
   $('.step-nav__item.step-nav__item_5 a').html("150")
 
@@ -42,11 +60,26 @@ $(document).on "page:change", ->
     $('#slider_growth').html(valueGrowth)
     $('.step-nav__item.step-nav__item_5 a').html(valueGrowth)
 
-
   $('#what-weight').change ->
     valueWeight = parseInt $('#what-weight').val()
     $('#slider_weight').html(valueWeight)
     $('.step-nav__item.step-nav__item_1 a').html(valueWeight)
+
+  $('#what-foot_size').change ->
+    valueWeight = parseInt $('#what-foot_size').val()
+    $('#slider_foot_size').html(valueWeight)
+    $('.step-nav__item.step-nav__item_2 a').html(valueWeight)
+
+  $('#what-body_type').change ->
+    if (parseInt $('#what-body_type').val()) == 1
+      valueWeight = I18n.t("bodies.slim")
+    else if (parseInt $('#what-body_type').val()) == 2
+      valueWeight = I18n.t("bodies.normal")
+    else
+      valueWeight = I18n.t("bodies.fat")
+
+    $('#slider_body_type').html(valueWeight)
+    $('.step-nav__item.step-nav__item_4 a').html(valueWeight)
 
   $('#gender1').click ->
     $('.step-nav__item.step-nav__item_3 a').html(I18n.translate("gender.female"))
