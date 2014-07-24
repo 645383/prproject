@@ -23,7 +23,7 @@ en:
     next: "Next"
     again: "Try again"
     start: "Take a test"
-  country: "! Are you from there?"
+  country: "Are you from there?"
   warn:
     who: "Better to choose male or female"
     height: "Indicate your height"

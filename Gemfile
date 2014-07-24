@@ -38,6 +38,7 @@ gem 'spreadsheet'
 gem 'russian'
 gem "i18n-js"
 gem 'i18n-country-translations'
+gem 'nokogiri'
 #gem "i18n-js-pika", require: "i18n-js"
 
 # Use ActiveModel has_secure_password

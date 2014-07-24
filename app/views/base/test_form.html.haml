@@ -46,43 +46,43 @@
     %h1.title_question
       =t("questions.height")
     #what-growth{name: "height"}
-    %input#what-growth-input{name: "height", :type => "hidden", :value => ""}
+    %input#what-growth-input{name: "height", :type => "hidden", :value => "150"}
   .weight
     %h1.title_question
       =t("questions.weight")
     #what-weight{name: "weight"}
-    %input#what-weight-input{name: "weight", :type => "hidden", :value => ""}
+    %input#what-weight-input{name: "weight", :type => "hidden", :value => "70"}
   .foot_size
     %h1.title_question
       =t("questions.foot_size")
     #what-foot_size{name: "foot_size"}
-    %input#what-foot_size-input{name: "foot_size", :type => "hidden", :value => ""}
+    %input#what-foot_size-input{name: "foot_size", :type => "hidden", :value => "38"}
   .hair_color
     %h1.title_question
       =t("questions.hair")
     %ul.selection-list
       %li.selection-list__item
-        %input#hair-color1{:name => "hair_color", :type => "radio", :value => "1", checked: "checked"}
+        %input#hair-color1{:name => "hair_color", :type => "radio", :value => "4", checked: "checked"}
           %label{:for => "hair-color1"}
-            %img{:src => "/asset/img/people/people_01.jpg"}
+            %img{:src => "/assets/img/people/people_01.jpg"}
               %span
                 =t("colors.blond")
       %li.selection-list__item
-        %input#hair-color2{:name => "hair_color", :type => "radio", :value => "2"}
+        %input#hair-color2{:name => "hair_color", :type => "radio", :value => "3"}
           %label{:for => "hair-color2"}
-            %img{:src => "/asset/img/people/people_01.jpg"}
+            %img{:src => "/assets/img/people/people_01.jpg"}
               %span
                 =t("colors.red")
       %li.selection-list__item
-        %input#hair-color3{:name => "hair_color", :type => "radio", :value => "3"}
+        %input#hair-color3{:name => "hair_color", :type => "radio", :value => "2"}
           %label{:for => "hair-color3"}
-            %img{:src => "/asset/img/people/people_01.jpg"}
+            %img{:src => "/assets/img/people/people_01.jpg"}
               %span
                 =t("colors.brown")
       %li.selection-list__item
-        %input#hair-color4{:name => "hair_color", :type => "radio", :value => "4"}
+        %input#hair-color4{:name => "hair_color", :type => "radio", :value => "1"}
           %label{:for => "hair-color4"}
-            %img{:src => "/asset/img/people/people_01.jpg"}
+            %img{:src => "/assets/img/people/people_01.jpg"}
               %span
                 =t("colors.black")
       %li.selection-list__item.selection-list__item_sizer
@@ -92,15 +92,15 @@
       =t("questions.gender")
     %ul.selection-list
       %li.selection-list__item
-        %input#gender1{:name => "gender", :type => "radio", :value => "1", checked: "checked"}
+        %input#gender1{:name => "gender", :type => "radio", :value => "2", checked: "checked"}
           %label{:for => "gender1"}
-            %img{:src => "img/people/people_02.jpg"}
+            %img{:src => "/assets/img/people/people_02.jpg"}
               %span
                 =t("gender.female")
       %li.selection-list__item
-        %input#gender2{:name => "gender", :type => "radio", :value => "2"}
+        %input#gender2{:name => "gender", :type => "radio", :value => "1"}
           %label{:for => "gender2"}
-            %img{:src => "img/people/people_03.jpg"}
+            %img{:src => "/assets/img/people/people_03.jpg"}
               %span
                 =t("gender.male")
       %li.selection-list__item.selection-list__item_sizer
@@ -109,7 +109,7 @@
     %h1.title_question
       =t("questions.body_type")
     #what-body_type{name: "body_type"}
-    %input#what-body_type-input{name: "body_type", :type => "hidden", :value => ""}
+    %input#what-body_type-input{name: "body_type", :type => "hidden", :value => "2"}
 
   #submit.submit
     =submit_tag t("buttons.submit")

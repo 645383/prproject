@@ -15,6 +15,7 @@ $(document).on "page:change", ->
 
   $('#what-growth').noUiSlider
     start: 150,
+    step: 1
     connect: "lower",
     range:
       'min': 100,
@@ -22,6 +23,7 @@ $(document).on "page:change", ->
 
   $('#what-weight').noUiSlider
     start: 70,
+    step: 1
     connect: "lower",
     range:
       'min': 30,
@@ -29,6 +31,7 @@ $(document).on "page:change", ->
 
   $('#what-foot_size').noUiSlider
     start: 38,
+    step: 1
     connect: "lower",
     range:
       'min': 35,
@@ -36,6 +39,7 @@ $(document).on "page:change", ->
 
   $('#what-body_type').noUiSlider
     start: 2,
+    step: 1,
     connect: "lower",
     range:
       'min': 1,
@@ -47,11 +51,11 @@ $(document).on "page:change", ->
   $('#what-body_type .noUi-handle.noUi-handle-lower').html("<div id='slider_body_type'></div>")
   $('#slider_body_type').html(I18n.t("bodies.normal"))
 
-  $('.step-nav__item.step-nav__item_1 a').html("70")
-  $('.step-nav__item.step-nav__item_2 a').html("38")
-  $('.step-nav__item.step-nav__item_3 a').html(I18n.t("gender.female"))
-  $('.step-nav__item.step-nav__item_4 a').html(I18n.t("features.normal"))
-  $('.step-nav__item.step-nav__item_5 a').html("150")
+#  $('.step-nav__item.step-nav__item_1 a').html("70")
+#  $('.step-nav__item.step-nav__item_2 a').html("38")
+#  $('.step-nav__item.step-nav__item_3 a').html(I18n.t("gender.female"))
+#  $('.step-nav__item.step-nav__item_4 a').html(I18n.t("features.normal"))
+#  $('.step-nav__item.step-nav__item_5 a').html("150")
 
   initialize
 
@@ -59,27 +63,31 @@ $(document).on "page:change", ->
     valueGrowth = parseInt $('#what-growth').val()
     $('#slider_growth').html(valueGrowth)
     $('.step-nav__item.step-nav__item_5 a').html(valueGrowth)
+    $('#what-growth-input').val(valueGrowth)
 
   $('#what-weight').change ->
     valueWeight = parseInt $('#what-weight').val()
     $('#slider_weight').html(valueWeight)
     $('.step-nav__item.step-nav__item_1 a').html(valueWeight)
+    $('#what-weight-input').val(valueWeight)
 
   $('#what-foot_size').change ->
-    valueWeight = parseInt $('#what-foot_size').val()
-    $('#slider_foot_size').html(valueWeight)
-    $('.step-nav__item.step-nav__item_2 a').html(valueWeight)
+    valueFootSize = parseInt $('#what-foot_size').val()
+    $('#slider_foot_size').html(valueFootSize)
+    $('.step-nav__item.step-nav__item_2 a').html(valueFootSize)
+    $('#what-foot_size-input').val(valueFootSize)
 
   $('#what-body_type').change ->
     if (parseInt $('#what-body_type').val()) == 1
-      valueWeight = I18n.t("bodies.slim")
+      valueBodyType = I18n.t("bodies.slim")
     else if (parseInt $('#what-body_type').val()) == 2
-      valueWeight = I18n.t("bodies.normal")
+      valueBodyType = I18n.t("bodies.normal")
     else
-      valueWeight = I18n.t("bodies.fat")
+      valueBodyType = I18n.t("bodies.fat")
 
-    $('#slider_body_type').html(valueWeight)
-    $('.step-nav__item.step-nav__item_4 a').html(valueWeight)
+    $('#slider_body_type').html(valueBodyType)
+    $('.step-nav__item.step-nav__item_4 a').html(valueBodyType)
+    $('#what-body_type-input').val(parseInt $('#what-body_type').val())
 
   $('#gender1').click ->
     $('.step-nav__item.step-nav__item_3 a').html(I18n.translate("gender.female"))
@@ -91,14 +99,10 @@ $(document).on "page:change", ->
   $(".btn.btn_color.block_right").click ->
     $(".current").removeClass("current").hide().next().slideDown().addClass("current")
     hideButton()
-    $('#what-growth-input').val($('#what-growth').val())
-    $('#what-weight-input').val($('#what-weight').val())
-
 
   $(".btn.btn_color.block_left").click ->
     $(".current").removeClass("current").hide().prev().slideDown().addClass "current"
     hideButton()
-
 
   $('.step-nav__item a').click ->
     this.href = "javascript:void(0)"

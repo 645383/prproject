@@ -5,6 +5,7 @@ PrProject::Application.routes.draw do
   get 'countries/show'
   get 'base/select_language'
   get 'base/test_form'
+  post 'countries/render_wiki'
   #end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
