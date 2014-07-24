@@ -8,6 +8,11 @@ $(document).on "page:change", ->
   else
     I18n.locale = 'ru'
 
+  $(".social-likes").socialLikes
+    url: "http://ukr.net"
+    counters: true
+    zeroes: false
+
   $('#what-growth').noUiSlider
     start: 150,
     connect: "lower",
@@ -248,10 +253,7 @@ $(document).on "page:change", ->
 #    $("#next").attr "disabled", null
 #    $(".notice").hide()
 #
-#  $(".social-likes").socialLikes
-#    url: "http://auto.ria.ua"
-#    counters: true
-#    zeroes: true
+
 
 
 #    singleTitle: "Share it!"

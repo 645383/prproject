@@ -14,5 +14,6 @@
 //= require jquery_ujs
 //= require jquery.turbolinks
 //= require turbolinks
+//= require social-likes/social-likes.min
 //= require jquery.nouislider.min
 //= require_tree .

@@ -17,7 +17,7 @@
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = javascript_include_tag "i18n", "translations"
     -#= javascript_include_tag "jquery.min"
-    = javascript_include_tag "social-likes/social-likes.min"
+    -#= javascript_include_tag "social-likes/social-likes.min"
     -#%script{src: "//code.jquery.com/jquery-1.10.2.js"}
     -#%script{src: "//code.jquery.com/ui/1.11.0/jquery-ui.js"}
     -#%script{:src => "http://code.jquery.com/jquery-latest.min.js"}
@@ -71,8 +71,17 @@
     = csrf_meta_tags
 
   %body
-    .page.page_index
-      .page__inner
-        = render 'layouts/header'
-        .page__main
-          = yield
+    -unless @page_second
+      .page.page_index
+        .page__inner
+          = render 'layouts/header'
+          .page__main
+            =yield
+          -#=render 'layouts/footer'
+    -else
+      .page.page_second.clearfix
+        .page__inner
+          = render 'layouts/header'
+          .page__main
+            =yield
+          -#=render 'layouts/footer'

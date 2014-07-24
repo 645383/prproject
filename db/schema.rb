@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140624141810) do
+ActiveRecord::Schema.define(version: 20140724113504) do
 
   create_table "countries", force: true do |t|
     t.string   "name"
@@ -22,12 +22,13 @@ ActiveRecord::Schema.define(version: 20140624141810) do
   create_table "people", force: true do |t|
     t.integer  "height"
     t.string   "hair_color"
-    t.integer  "weight"
+    t.integer  "weight",     limit: 255
     t.integer  "country_id"
     t.string   "gender"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "body_type"
+    t.integer  "foot_size"
   end
 
 end

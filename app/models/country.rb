@@ -16,18 +16,21 @@ class Country < ActiveRecord::Base
         genders.each_with_index do |_, index|
           height = sheets.sheet(index).row(i)[1]
           weight = sheets.sheet(index).row(i)[2]
-          hair_color = Person::NORMAL_HAIR[sheets.sheet(index).row(i)[3]]
-          body_type = Person::NORMAL_BODY[sheets.sheet(index).row(i)[4]]
+          foot_size = sheets.sheet(index).row(i)[3]
+          hair_color = Person::NORMAL_HAIR[sheets.sheet(index).row(i)[4]]
+          body_type = Person::NORMAL_BODY[sheets.sheet(index).row(i)[5]]
           @country.people.new(
               gender: genders[index],
               height: height,
               weight: weight,
+              foot_size: foot_size,
               hair_color: hair_color,
               body_type: body_type
           )
         end
         @country.save
-        @country.people.each { |p| puts "---> #{p.gender}, #{p.height}, #{p.weight}, #{p.hair_color}, #{p.body_type}" }
+        @country.people.each { |p| puts "---> #{p.gender}, #{p.height}, #{p.weight}, #{p.foot_size} #{p.hair_color},
+#{p.body_type}" }
       end
       i+=1
     end
