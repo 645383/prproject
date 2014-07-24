@@ -1,5 +1,13 @@
 $(document).on "page:change", ->
 
+  locale = window.location.href.toString().split('?locale=')[1]
+  if locale == 'ru'
+    I18n.locale = 'ru'
+  else if locale == 'en'
+    I18n.locale = 'en'
+  else
+    I18n.locale = 'ru'
+
   $('#what-growth').noUiSlider
     start: 150,
     connect: "lower",
@@ -18,8 +26,8 @@ $(document).on "page:change", ->
   $('#what-weight .noUi-handle.noUi-handle-lower').html("<div id='slider_weight'>70</div>")
   $('.step-nav__item.step-nav__item_1 a').html("70")
   $('.step-nav__item.step-nav__item_2 a').html("38")
-  $('.step-nav__item.step-nav__item_3 a').html("Женщина")
-  $('.step-nav__item.step-nav__item_4 a').html("Нормальное")
+  $('.step-nav__item.step-nav__item_3 a').html(I18n.translate("gender.female"))
+  $('.step-nav__item.step-nav__item_4 a').html(I18n.t("features.normal"))
   $('.step-nav__item.step-nav__item_5 a').html("150")
 
   initialize
@@ -36,9 +44,9 @@ $(document).on "page:change", ->
     $('.step-nav__item.step-nav__item_1 a').html(valueWeight)
 
   $('#gender1').click ->
-    $('.step-nav__item.step-nav__item_3 a').html('Женщина')
+    $('.step-nav__item.step-nav__item_3 a').html(I18n.translate("gender.female"))
   $('#gender2').click ->
-    $('.step-nav__item.step-nav__item_3 a').html('Мужчина')
+    $('.step-nav__item.step-nav__item_3 a').html(I18n.translate("gender.male"))
 
   $(".btn.btn_color.block_left").hide() if $(".height").hasClass("current")
 
@@ -80,9 +88,7 @@ $(document).on "page:change", ->
       $('.num_question').show()
 
   initialize = ->
-
     $('.num_question').text "- 1/6 -"
-
 
 
 ########################################################################################################################

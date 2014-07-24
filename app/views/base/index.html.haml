@@ -44,10 +44,12 @@
 -#      = t('buttons.next')
 
 
-%h1.title_name Там ли ты живешь?
+%h1.title_name
+  =t("index_page.title_name")
 %h2
-  Найди свое место в мире по
-  %br параметрам своего тела.
+  =t("index_page.h2_1")
+  %br
+  =t("index_page.h2_2")
 %p
   -locale = request.original_url.split("?locale=")[1]
-  = link_to "Пройти тест", base_test_form_path, class: "btn btn_color", id: "start"
+  = link_to t("buttons.start"), base_test_form_path, class: "btn btn_color", id: "start"

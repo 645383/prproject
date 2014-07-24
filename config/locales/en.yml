@@ -6,9 +6,9 @@ en:
     height: "Height"
     weight: "Weight"
     body_type: "Body type"
-    slim: "slim"
-    normal: "normal"
-    fat: "fat"
+    slim: "Slim"
+    normal: "Normal"
+    fat: "Fat"
   hair_colors:
     hair_color: "Hair color"
     black: "black"
@@ -22,6 +22,7 @@ en:
     prev: "Previous"
     next: "Next"
     again: "Try again"
+    start: "Take a test"
   country: "! Are you from there?"
   warn:
     who: "Better to choose male or female"
@@ -34,18 +35,18 @@ en:
     height: "Your height is "
     weight: "Your weight is "
     body:  "Your body type is "
-    hair:  "Your hair color is "
+    hair:
   bodies:
     fat: "fat"
     slim: "slim"
     normal: "normal"
   colors:
-    red: "red"
-    black: "black"
+    red: "Red"
+    black: "Dark"
     b_w: "black wavy"
-    brown: "brown"
+    brown: "Brown"
     br_w: "brown wavy"
-    blond: "blond"
+    blond: "Blond"
   exceptions:
     no_input: "Empty fields not allowed. Please, try again."
     height_s: "Sorry, height input is not correct"
@@ -54,3 +55,12 @@ en:
     weight_b: "Sorry, weight input is not correct"
   share: "Share us with your friends"
   suggest: "Probably this is body type you have"
+  index_page:
+    title_name: "Do you live in right country?"
+    h2_1: "Find your place in the world."
+    h2_2: ""
+  questions:
+    height: "Choose your growth"
+    weight: "Choose your weight"
+    hair: "Choose your hair color"
+    gender: "Choose your gender"
