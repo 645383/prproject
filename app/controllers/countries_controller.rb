@@ -9,14 +9,23 @@ class CountriesController < ApplicationController
   ]
 
   def show
-    @country = Country.find(params[:format]).name.to_sym
+    debugger
+    @country = Country.find(params[:format][0]).name.to_sym
+
   rescue Exception => e
     flash[:notice] = e.message
     redirect_to root_path
   end
 
   def find_country
+    #c = []
+    #select_country(params).each {|id| c << Country.find(id).name.to_sym}
+    #str =""
+    #c.each {|country| str = str + t(country, :scope => :countries) + ", "}
+    #debugger
+
     redirect_to countries_show_path(select_country(params))
+      #debugger
   rescue Error => e
     flash[:notice] = e.message
     redirect_to root_path
