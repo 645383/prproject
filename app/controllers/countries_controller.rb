@@ -1,4 +1,5 @@
 require 'open-uri'
+require 'net/http'
 
 class CountriesController < ApplicationController
   include CountrySelector
