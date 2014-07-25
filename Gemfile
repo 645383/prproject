@@ -51,8 +51,8 @@ gem 'nokogiri'
 # gem 'capistrano', group: :development
 
 # Use debugger
+gem 'roo'
 group :development, :test do
   gem 'debugger'
-  #gem 'roo'
 end
 
