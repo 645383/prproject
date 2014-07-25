@@ -292,7 +292,7 @@ img {
   height: 35px;
   left: 40px;
   top: 35px;
-  background: url("img/logo.png") no-repeat;
+  background: url("/assets/img/logo.png") no-repeat;
   text-indent: 100%;
   white-space: nowrap;
   overflow: hidden;
