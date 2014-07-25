@@ -53,6 +53,8 @@ gem 'nokogiri'
 # Use debugger
 gem 'pg'
 gem 'roo'
+gem 'rails_12factor', group: :production
+
 group :development, :test do
   gem 'debugger'
 end
