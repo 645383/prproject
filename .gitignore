@@ -8,7 +8,6 @@
 /.bundle
 /.ruby-gemset
 /.ruby-version
-/Gemfile.lock
 /.idea
 /public/*.xls*
 
