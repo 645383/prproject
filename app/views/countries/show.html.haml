@@ -2,9 +2,12 @@
 .buttons
   =link_to t('buttons.again'), base_test_form_path(locale: locale)
 #country
-  =link_to "#{t(@country, :scope => :countries)}!", countries_render_wiki_path(wiki: "http://#{locale}.wikipedia.org/wiki/#{t(@country,
+  #{t(@country, :scope => :countries)}! #{t('country')}
+
+-if locale == "en"
+  =link_to "#{t("wiki")}", countries_render_wiki_path(wiki: "http://#{locale}.wikipedia.org/wiki/#{t(@country,
   :scope => :countries)}"), method: 'post', remote: true
-  #{t('country')}
+
 
 .country_wiki
 
