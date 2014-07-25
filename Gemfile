@@ -53,6 +53,6 @@ gem 'nokogiri'
 # Use debugger
 group :development, :test do
   gem 'debugger'
-  gem 'roo'
+  #gem 'roo'
 end
 
