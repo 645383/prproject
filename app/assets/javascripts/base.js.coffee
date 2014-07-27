@@ -51,43 +51,41 @@ $(document).on "page:change", ->
   $('#what-body_type .noUi-handle.noUi-handle-lower').html("<div id='slider_body_type'></div>")
   $('#slider_body_type').html(I18n.t("bodies.normal"))
 
-#  $('.step-nav__item.step-nav__item_1 a').html("70")
-#  $('.step-nav__item.step-nav__item_2 a').html("38")
-#  $('.step-nav__item.step-nav__item_3 a').html(I18n.t("gender.female"))
-#  $('.step-nav__item.step-nav__item_4 a').html(I18n.t("features.normal"))
-#  $('.step-nav__item.step-nav__item_5 a').html("150")
-
   initialize
 
-  $('#what-growth').change ->
-    valueGrowth = parseInt $('#what-growth').val()
-    $('#slider_growth').html(valueGrowth)
-    $('.step-nav__item.step-nav__item_5 a').html(valueGrowth)
-    $('#what-growth-input').val(valueGrowth)
+  $('#what-growth').on
+    slide: ->
+      valueGrowth = parseInt $('#what-growth').val()
+      $('#slider_growth').html(valueGrowth)
+      $('.step-nav__item.step-nav__item_5 a').html(valueGrowth)
+      $('#what-growth-input').val(valueGrowth)
 
-  $('#what-weight').change ->
-    valueWeight = parseInt $('#what-weight').val()
-    $('#slider_weight').html(valueWeight)
-    $('.step-nav__item.step-nav__item_1 a').html(valueWeight)
-    $('#what-weight-input').val(valueWeight)
+  $('#what-weight').on
+    slide: ->
+      valueWeight = parseInt $('#what-weight').val()
+      $('#slider_weight').html(valueWeight)
+      $('.step-nav__item.step-nav__item_1 a').html(valueWeight)
+      $('#what-weight-input').val(valueWeight)
 
-  $('#what-foot_size').change ->
-    valueFootSize = parseInt $('#what-foot_size').val()
-    $('#slider_foot_size').html(valueFootSize)
-    $('.step-nav__item.step-nav__item_2 a').html(valueFootSize)
-    $('#what-foot_size-input').val(valueFootSize)
+  $('#what-foot_size').on
+    slide: ->
+      valueFootSize = parseInt $('#what-foot_size').val()
+      $('#slider_foot_size').html(valueFootSize)
+      $('.step-nav__item.step-nav__item_2 a').html(valueFootSize)
+      $('#what-foot_size-input').val(valueFootSize)
 
-  $('#what-body_type').change ->
-    if (parseInt $('#what-body_type').val()) == 1
-      valueBodyType = I18n.t("bodies.slim")
-    else if (parseInt $('#what-body_type').val()) == 2
-      valueBodyType = I18n.t("bodies.normal")
-    else
-      valueBodyType = I18n.t("bodies.fat")
+  $('#what-body_type').on
+    slide: ->
+      if (parseInt $('#what-body_type').val()) == 1
+        valueBodyType = I18n.t("bodies.slim")
+      else if (parseInt $('#what-body_type').val()) == 2
+        valueBodyType = I18n.t("bodies.normal")
+      else
+        valueBodyType = I18n.t("bodies.fat")
 
-    $('#slider_body_type').html(valueBodyType)
-    $('.step-nav__item.step-nav__item_4 a').html(valueBodyType)
-    $('#what-body_type-input').val(parseInt $('#what-body_type').val())
+      $('#slider_body_type').html(valueBodyType)
+      $('.step-nav__item.step-nav__item_4 a').html(valueBodyType)
+      $('#what-body_type-input').val(parseInt $('#what-body_type').val())
 
   $('#gender1').click ->
     $('.step-nav__item.step-nav__item_3 a').html(I18n.translate("gender.female"))

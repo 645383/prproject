@@ -2,7 +2,7 @@ PrProject::Application.routes.draw do
   #scope '/:locale' do
   root to: 'base#index'
   post 'countries/find_country'
-  get 'countries/show'
+  post 'countries/show'
   get 'base/select_language'
   get 'base/test_form'
   post 'countries/render_wiki'
