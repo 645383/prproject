@@ -1,4 +1,4 @@
-.weight, .submit, .hair_color, .gender, .foot_size, .body_type {
+.weight, .submit, .hair_color, .gender, .foot_size, .body_type, .more-countries, .country-wiki{
   display: none;
 }
 
@@ -9,6 +9,21 @@
 }
 
 .social-likes__counter_empty {
+  display: none;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+table {
+  background-color: #f5f5f5;
+  border-collapse: collapse;
+}
+
+.noUi-handle:after {
+  display: none;
+}
+.noUi-handle:before {
   display: none;
 }
 

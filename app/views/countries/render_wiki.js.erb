@@ -1,1 +1,4 @@
-$(".country_wiki").html("<%= escape_javascript @wiki.html_safe if @wiki.present?%>")
+$(".country-wiki#<%= @id_country %>").html("<%= escape_javascript @wiki.html_safe if @wiki.present?%>").toggle();
+$("table a").click(function(){
+    this.href = "javascript:void(0)"
+});

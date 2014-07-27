@@ -11,7 +11,7 @@
 -#  = content_tag :div, msg, class: name
 
 .page__header
-  =link_to "CHI software", root_path, class: "logo"
+  =link_to "CHI software", "http://chisw.us/", class: "logo"
   -#%a.logo{:href => "#"} CHI softwear
   = render 'layouts/items' if request.original_url.match /test_form/
   -if request.original_url.split("?locale=")[1] == "ru"

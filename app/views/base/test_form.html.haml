@@ -87,6 +87,11 @@
                 =t("colors.black")
       %li.selection-list__item.selection-list__item_sizer
         \&nbsp;
+  .body_type
+    %h1.title_question
+      =t("questions.body_type")
+    #what-body_type{name: "body_type"}
+    %input#what-body_type-input{name: "body_type", :type => "hidden", :value => "2"}
   .gender
     %h1.title_question
       =t("questions.gender")
@@ -105,14 +110,9 @@
                 =t("gender.male")
       %li.selection-list__item.selection-list__item_sizer
         \&nbsp;
-  .body_type
-    %h1.title_question
-      =t("questions.body_type")
-    #what-body_type{name: "body_type"}
-    %input#what-body_type-input{name: "body_type", :type => "hidden", :value => "2"}
 
   #submit.submit
-    =submit_tag t("buttons.submit")
+    =submit_tag t("buttons.submit"), class: "btn btn_color"
 
 .clearfix
   %a.btn.btn_color.block_left

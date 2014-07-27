@@ -1,3 +1,12 @@
+$(document).ready ->
+
+  $("#show-countries").click ->
+    $(".more-countries").toggle()
+
+
+#  $(".link-wiki").click ->
+#    $(".country-wiki").toggle()
+
 $(document).on "page:change", ->
 
   locale = window.location.href.toString().split('?locale=')[1]
@@ -52,6 +61,7 @@ $(document).on "page:change", ->
   $('#slider_body_type').html(I18n.t("bodies.normal"))
 
   initialize
+
 
   $('#what-growth').on
     slide: ->
@@ -108,6 +118,7 @@ $(document).on "page:change", ->
     id_name = this.id
     $("." + id_name).slideDown().addClass("current")
     hideButton()
+
 
   hideButton = ->
     numberOfQuests()

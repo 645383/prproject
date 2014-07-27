@@ -54,13 +54,15 @@ en:
     weight_s: "Sorry, weight input is not correct"
     weight_b: "Sorry, weight input is not correct"
   share: "Share us with your friends"
-  suggest: "Probably this is body type you have"
+  suggest:
+    body: "Probably this is body type you have"
+    country: "There are few more countries where you fit in"
   index_page:
     title_name: "Do you live in right country?"
     h2_1: "Find your place in the world."
     h2_2: ""
   questions:
-    height: "Choose your growth"
+    height: "Choose your height"
     weight: "Choose your weight"
     hair: "Choose your hair color"
     gender: "Choose your gender"

@@ -18,20 +18,15 @@ class CountriesController < ApplicationController
   end
 
   def find_country
-    #c = []
-    #select_country(params).each {|id| c << Country.find(id).name.to_sym}
-    #str =""
-    #c.each {|country| str = str + t(country, :scope => :countries) + ", "}
-    #debugger
-
-    redirect_to countries_show_path(select_country(params))
-      #debugger
+    @countries = []
+    select_country(params).each {|id| @countries << Country.find(id).name.to_sym}
   rescue Error => e
     flash[:notice] = e.message
     redirect_to root_path
   end
 
   def render_wiki
+    @id_country = params[:country]
     @wiki = fetch_url(params[:wiki])
     respond_to do |f|
       f.js
@@ -43,13 +38,13 @@ class CountriesController < ApplicationController
   def fetch_url(url)
 
     url.gsub! ' ', '_'
-    responce = Net::HTTP.get_response(URI.parse(url))
+    responce = Net::HTTP.get_response(URI.parse(URI.encode url))
     if responce.is_a? Net::HTTPSuccess
-      uri = open url
+      uri = open URI.encode url
       lineas = uri.readlines
       str = ""
       lineas.each_index do |i|
-        if lineas[i].match "<table class=\"infobox geography vcard\""
+        if lineas[i].match("<table class=\"infobox geography vcard\"") || lineas[i].match("<table class=\"infobox\"")
           c = 0
           excl_range = 0..0
           for k in i..lineas.length
@@ -78,7 +73,6 @@ class CountriesController < ApplicationController
                 end
               end
             end
-            #debugger
 
             str += lineas[k] unless excl_range.include? k
 
