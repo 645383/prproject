@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20140724113504) do
   create_table "people", force: true do |t|
     t.integer  "height"
     t.string   "hair_color"
-    t.integer  "weight",     limit: 255
+    t.integer  "weight"
     t.integer  "country_id"
     t.string   "gender"
     t.datetime "created_at"
