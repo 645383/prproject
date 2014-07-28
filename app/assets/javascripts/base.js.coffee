@@ -19,6 +19,8 @@ $(document).on "page:change", ->
 
   $(".social-likes").socialLikes
     url: "http://ukr.net"
+    title: "AAAAAAAAAAAAAAAAa"
+    singleTitle: "sssAAAAAAAAAAAAAAAAa"
     counters: true
     zeroes: false
 

@@ -14,7 +14,7 @@
   =link_to "CHI software", "http://chisw.us/", class: "logo"
   -#%a.logo{:href => "#"} CHI softwear
   = render 'layouts/items' if request.original_url.match /test_form/
-  -if request.original_url.split("?locale=")[1] == "ru"
-    =link_to "EN", root_path(locale: "en"), class: "lang"
-  -else
+  -if request.original_url.split("?locale=")[1] == "en"
     =link_to "RU", root_path(locale: "ru"), class: "lang"
+  -else
+    =link_to "EN", root_path(locale: "en"), class: "lang"
