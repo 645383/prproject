@@ -70,17 +70,6 @@
     = csrf_meta_tags
 
   %body
-    #fb-root
-    :javascript
-      (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/uk_UA/sdk.js#xfbml=1&appId=676661742411268&version=v2.0";
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-
-    .fb-share-button{"data-href" => "https://developers.facebook.com/docs/plugins/"}
     -unless @page_second
       .page.page_index
         .page__inner
