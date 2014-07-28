@@ -18,7 +18,7 @@ $(document).on "page:change", ->
     I18n.locale = 'ru'
 
   $(".social-likes").socialLikes
-    url: "http://ukr.net"
+    url: "http://morning-springs-9631.herokuapp.com/"
     title: "AAAAAAAAAAAAAAAAa"
     singleTitle: "sssAAAAAAAAAAAAAAAAa"
     counters: true
