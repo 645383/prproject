@@ -12,7 +12,6 @@
   -#  %html.no-js{:dir => "ltr", :itemscope => "", :itemtype => "http://schema.org/Thing", :lang => "ru", "xmlns:og" => "http://ogp.me/ns#"}
   %head
     %title Там ли ты живешь?
-    %meta{:property => "og:title", :content => "Chocolate Pecan Pie"}
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = javascript_include_tag "i18n", "translations"
@@ -27,17 +26,17 @@
     / <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     %meta{:content => "IE=5, IE=8, IE=9, IE=10", "http-equiv" => "X-UA-Compatible"}/
     / Social meta schema.org
-    %meta{:content => "Заголовок страницы", :itemprop => "name"}/
-    %meta{:content => "Описание содержимого", :itemprop => "description"}/
+    %meta{:content => "Там ли ты живешь?", :itemprop => "name"}/
+    %meta{:content => "Пейте дети молоко - будете здоровы!", :itemprop => "description"}/
     %meta{:content => "images/logo.png", :itemprop => "image"}/
     / Social meta schema.org
     / Social meta ogp.me
     %meta{:content => "article", :property => "og:type"}
     / NB! insert right type
-    %meta{:content => "Заголовок страницы", :property => "og:title"}/
-    %meta{:content => "Описание содержимого", :property => "og:description"}/
-    %meta{:content => "images/logo.png", :property => "og:image"}/
-    %meta{:content => "Название ресурса, на котором расположена статья", :property => "og:site_name"}
+    %meta{:content => "Там ли ты живешь?", :property => "og:title"}/
+    %meta{:content => "Пейте дети молоко - будете здоровы!", :property => "og:description"}/
+    %meta{:content => "assets/img/logo.png", :property => "og:image"}/
+    %meta{:content => "morning-springs-9631.herokuapp.com", :property => "og:site_name"}
     %meta{:content => "Раздел, к которому относится статья", :property => "article:section"}
     %meta{:content => "Ключевые слова", :property => "article:tag"}
     / Social meta ogp.me
@@ -71,6 +70,17 @@
     = csrf_meta_tags
 
   %body
+    #fb-root
+    :javascript
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/uk_UA/sdk.js#xfbml=1&appId=676661742411268&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+
+    .fb-share-button{"data-href" => "https://developers.facebook.com/docs/plugins/"}
     -unless @page_second
       .page.page_index
         .page__inner
