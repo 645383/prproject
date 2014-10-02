@@ -19,7 +19,7 @@ module GeoData
     factory = GeometryFactory.new
     wkt_parser = EWKTParser.new(factory)
 
-    borderDB = Mysql::new('localhost', 'root', '', 'countries_poligones')
+    borderDB = Mysql::new('localhost', 'root', '', 'pr_project')
     res = borderDB.query("select name, iso2, AsText(ogc_geom), region from world_boundaries where iso2='#{country_iso}'")
     encoded_polygon_desc = "";
     remove_warnings_layer = "function removeBordersOverlay(map) {\n"

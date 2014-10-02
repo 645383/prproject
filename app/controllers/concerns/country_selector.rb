@@ -19,8 +19,8 @@ module CountrySelector
       heights << person.height
       weights << person.weight
       foot_sizes << person.foot_size
-      hair_colors << Person::HAIR_SCALE[person.hair_color]
-      body_types << Person::BODY_SCALE[person.body_type]
+      hair_colors << Person::HAIR_SCALE[person.hair_color.force_encoding('utf-8')]
+      body_types << Person::BODY_SCALE[person.body_type.force_encoding('utf-8')]
     end
 
     height_variation = heights.max - heights.min
