@@ -1,17 +1,34 @@
 $(document).ready ->
 
-  map = undefined
+  google.maps.Polygon::getBounds = ->
+    bounds = new google.maps.LatLngBounds()
+    paths = @getPaths()
+    path = undefined
+    i = 0
+
+    while i < paths.getLength()
+      path = paths.getAt(i)
+      ii = 0
+
+      while ii < path.getLength()
+        bounds.extend path.getAt(ii)
+        ii++
+      i++
+    bounds
+
   initialize = ->
     mapCanvas = document.getElementById('map_canvas')
     mapOptions = {
-      center: new google.maps.LatLng(50.5403, 10.5463),
-      zoom: 5,
+      center: new google.maps.LatLng(50.5403, 15.5463),
+      zoom: 9,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     }
     map = new google.maps.Map(mapCanvas, mapOptions)
+    poly = addBordersOverlay(map)
+    map.fitBounds(poly.getBounds());
 
   google.maps.event.addDomListener(window, 'load', initialize)
-  addBordersOverlay(map)
+
 
   $("#show-countries").click ->
     $(".more-countries").toggle()

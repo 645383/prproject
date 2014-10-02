@@ -3,6 +3,7 @@ require 'net/http'
 
 class CountriesController < ApplicationController
   include CountrySelector
+  include GeoData
 
   EXCEPT_RESULT_TABLE_DATA = [
       "<td class=\"anthem\""
@@ -20,6 +21,7 @@ class CountriesController < ApplicationController
   def find_country
     @countries = []
     select_country(params).each {|id| @countries << Country.find(id).name.to_sym}
+    generate_js_border_overlay(@countries[0].to_s)
   rescue Error => e
     flash[:notice] = e.message
     redirect_to root_path

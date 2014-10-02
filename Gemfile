@@ -59,4 +59,6 @@ group :development, :test do
   gem 'sqlite3'
   gem 'debugger'
 end
+gem 'mysql'
+gem 'georuby'
 
