@@ -16,4 +16,5 @@
 //= require turbolinks
 //= require social-likes/social-likes.min
 //= require jquery.nouislider.min
+//= require bordersOverlay
 //= require_tree .

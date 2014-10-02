@@ -1,5 +1,18 @@
 $(document).ready ->
 
+  map = undefined
+  initialize = ->
+    mapCanvas = document.getElementById('map_canvas')
+    mapOptions = {
+      center: new google.maps.LatLng(50.5403, 10.5463),
+      zoom: 5,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+    map = new google.maps.Map(mapCanvas, mapOptions)
+
+  google.maps.event.addDomListener(window, 'load', initialize)
+  addBordersOverlay(map)
+
   $("#show-countries").click ->
     $(".more-countries").toggle()
 
