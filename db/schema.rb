@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140724113504) do
+ActiveRecord::Schema.define(version: 20141003092256) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+  enable_extension "postgis"
 
   create_table "countries", force: true do |t|
     t.string   "name"
@@ -29,6 +33,21 @@ ActiveRecord::Schema.define(version: 20140724113504) do
     t.datetime "updated_at"
     t.string   "body_type"
     t.integer  "foot_size"
+  end
+
+  create_table "world_boundaries", force: true do |t|
+    t.text    "fips"
+    t.text    "iso2"
+    t.text    "iso3"
+    t.integer "un"
+    t.text    "name"
+    t.integer "area"
+    t.integer "pop2005"
+    t.integer "region"
+    t.integer "subregion"
+    t.float   "lon"
+    t.float   "lat"
+    t.spatial "ogc_geom",  limit: {:srid=>0, :type=>"geometry"}
   end
 
 end

@@ -60,8 +60,12 @@ group :development, :test do
   gem'pry'
   gem 'pry-rails'
   gem 'pry-nav'
+  gem 'mysql'
 end
-gem 'mysql'
+# gem 'activerecord-mysqlspatial-adapter'
+# gem 'mysqltopostgres'
+# gem 'mysql2psql', '~> 0.1.0'
+gem 'activerecord-postgis-adapter'
 gem 'georuby'
 
 

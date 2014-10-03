@@ -1,0 +1,52 @@
+-- MySQL 2 PostgreSQL dump
+
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = off;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+ 
+-- Table: schema_migrations
+ 
+-- DROP TABLE schema_migrations;
+DROP TABLE IF EXISTS "schema_migrations" CASCADE;
+ 
+CREATE TABLE "schema_migrations" (
+  "version" character varying(255) NOT NULL
+)
+WITHOUT OIDS;
+DROP INDEX IF EXISTS "unique_schema_migrations" CASCADE;
+CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version");
+-- Table: world_boundaries
+ 
+-- DROP TABLE world_boundaries;
+DROP TABLE IF EXISTS "world_boundaries" CASCADE;
+ 
+CREATE TABLE "world_boundaries" (
+  "ID" integer NOT NULL,
+  "FIPS" character varying(255),
+  "ISO2" character varying(255),
+  "ISO3" character varying(255),
+  "UN" integer,
+  "NAME" character varying(255),
+  "AREA" integer,
+  "POP2005" bigint,
+  "REGION" integer,
+  "SUBREGION" integer,
+  "LON" double precision,
+  "LAT" double precision,
+  "ogc_geom" geometry,
+  CONSTRAINT world_boundaries_pkey PRIMARY KEY("ID")
+)
+WITHOUT OIDS;
+--
+-- Data for Name: schema_migrations; Type: TABLE DATA; Schema: public
+--
+
+COPY "schema_migrations" ("version") FROM stdin;
+\.
+
+--
+-- Data for Name: world_boundaries; Type: TABLE DATA; Schema: public
+--
+
+COPY "world_boundaries" ("ID", "FIPS", "ISO2", "ISO3", "UN", "NAME", "AREA", "POP2005", "REGION", "SUBREGION", "LON", "LAT", "ogc_geom") FROM stdin;
