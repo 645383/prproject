@@ -10,9 +10,9 @@ sql.force_encoding('binary')
 #p sql.encoding
 statements = sql.split(/;$/)
 # binding.pry
-# statements.pop  # the last empty statement
+statements.pop  # the last empty statement
+statements.shift
 connection = ActiveRecord::Base.connection
-# statements.shift
 # connection.close
 # connection = ActiveRecord::Base.connection
 ActiveRecord::Base.transaction do

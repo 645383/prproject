@@ -21,7 +21,8 @@ class CountriesController < ApplicationController
   def find_country
     @countries = []
     select_country(params).each {|id| @countries << Country.find(id).name.to_sym}
-    generate_js_border_overlay(@countries[0].to_s)
+    WorldBoundaries.generate_js_border_overlay(@countries[0].to_s)
+    # generate_js_border_overlay(@countries[0].to_s)
   rescue Error => e
     flash[:notice] = e.message
     redirect_to root_path
