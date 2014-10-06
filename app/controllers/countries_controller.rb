@@ -3,7 +3,6 @@ require 'net/http'
 
 class CountriesController < ApplicationController
   include CountrySelector
-  include GeoData
 
   EXCEPT_RESULT_TABLE_DATA = [
       "<td class=\"anthem\""
