@@ -4,13 +4,13 @@
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
 development:
-  adapter: postgis
+  adapter: sqlite3
   encoding: unicode
-  database: pr_project
+  database: db/development.sqlite3
   pool: 5
   timeout: 5000
-  username: postgres
-  password: 645383
+#  username: postgres
+#  password: 645383
 
 #development:
 #  adapter: mysql
