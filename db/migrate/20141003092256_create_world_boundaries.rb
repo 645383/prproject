@@ -13,7 +13,8 @@ class CreateWorldBoundaries < ActiveRecord::Migration
       t.integer :subregion
       t.float :lon
       t.float :lat
-      t.geometry :ogc_geom
+      t.text :ogc_geom
+      # t.geometry :ogc_geom
       # t.timestamps
     end
   end

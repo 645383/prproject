@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 20141003092256) do
     t.integer "subregion"
     t.float   "lon"
     t.float   "lat"
-    t.spatial "ogc_geom",  limit: {:srid=>0, :type=>"geometry"}
+    t.text    "ogc_geom"
   end
 
 end

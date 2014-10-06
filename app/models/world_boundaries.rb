@@ -7,17 +7,16 @@ class WorldBoundaries < ActiveRecord::Base
 
     # borderDB = Mysql::new('localhost', 'root', '', 'pr_project')
     # res = borderDB.query("select name, iso2, AsText(ogc_geom), region from world_boundaries where iso2='#{country_iso}'")
-    # res = WorldBoundaries.where(iso2: country_iso).first
-    conn = PG.connect(dbname: 'pr_project', user: 'postgres', password: '645383')
-    res = conn.exec("select ST_AsText(ogc_geom) from world_boundaries where iso2='#{country_iso}';")
+    res = WorldBoundaries.where(iso2: country_iso)
+    # conn = PG.connect(dbname: 'pr_project', user: 'postgres', password: '645383')
+    # res = conn.exec("select ST_AsText(ogc_geom) from world_boundaries where iso2='#{country_iso}';")
 
     encoded_polygon_desc = ""
     remove_warnings_layer = "function removeBordersOverlay(map) {\n"
     add_borders = "function addBordersOverlay(map) {\n"
     res.each do |row|
-      # name, iso2, multi_polygon, region = *row
-      # binding.pry
-      processed_polygon = wkt_parser.parse(row['st_astext'])
+      # processed_polygon = wkt_parser.parse(row['st_astext'])
+      processed_polygon = wkt_parser.parse(row.ogc_geom)
       encoded_polygon_desc << "var encodedPolygon_#{country_iso};\n"
       remove_warnings_layer << "encodedPolygon_#{country_iso}.setMap(null);\n"
       add_borders << "encodedPolygon_#{country_iso} = \

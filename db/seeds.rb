@@ -6,23 +6,16 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 sql = File.read("#{Rails.root}/db/wb_dump.sql")
-sql.force_encoding('binary')
-#p sql.encoding
+# sql.force_encoding('binary')
 statements = sql.split(/;$/)
-# binding.pry
 statements.pop  # the last empty statement
 statements.shift
 connection = ActiveRecord::Base.connection
-# connection.close
-# connection = ActiveRecord::Base.connection
 ActiveRecord::Base.transaction do
-  #begin
   statements.each do |statement|
-    statement.gsub!("GeometryFromText", "ST_GeomFromText")
-    # statement.gsub!(/\'/){ %q(') }
-    connection.execute(statement)
+    # statement.gsub!("GeometryFromText", "ST_GeomFromText")
+    sub_string = /.*GeometryFromText\((.*)\'.*/.match(statement)[1] + '\''
+    sub_statement = statement.gsub!(/GeometryFromText\((.*)/, sub_string) + ');'
+    connection.execute(sub_statement)
   end
-  #rescue ActiveRecord::StatementInvalid => e
-  #  p e.message
-  #end
 end
