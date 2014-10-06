@@ -1,17 +1,17 @@
-mysql:
- hostname: 127.0.0.1
- port: 3306
- socket: /var/lib/mysql/mysql.sock
- username: root
- database: pr_project
-
-destination:
-# file: mysql_db_to_pg.dump
- postgres:
-  hostname: localhost
-  port: 5432
-  username: postgres
-  database: pr_project
+#mysql:
+# hostname: 127.0.0.1
+# port: 3306
+# socket: /var/lib/mysql/mysql.sock
+# username: root
+# database: pr_project
+#
+#destination:
+## file: mysql_db_to_pg.dump
+# postgres:
+#  hostname: localhost
+#  port: 5432
+#  username: postgres
+#  database: pr_project
 
 # if tables is given, only the listed tables will be converted.  leave empty to convert all tables.
 #tables:
@@ -24,10 +24,10 @@ destination:
 
 
 # if supress_data is true, only the schema definition will be exported/migrated, and not the data
-supress_data: false
+#supress_data: false
 
 # if supress_ddl is true, only the data will be exported/imported, and not the schema
-supress_ddl: false
+#supress_ddl: false
 
 # if force_truncate is true, forces a table truncate before table loading
-force_truncate: false
+#force_truncate: false
