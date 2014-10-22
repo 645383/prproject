@@ -5,7 +5,7 @@
 -@countries.each do |country|
   %ul
     -if @countries[0] == country
-      %h1
+      %h1.main_country{"data-attribute" => "#{country}"}
         = link_to "#{t(country, :scope => :countries)}!",
         countries_render_wiki_path(wiki: "http://#{locale}.wikipedia.org/wiki/#{t(country, :scope => :countries)}", country: country),
         method: 'post', remote: true

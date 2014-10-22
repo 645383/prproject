@@ -19,12 +19,15 @@ class CountriesController < ApplicationController
 
   def find_country
     @countries = []
-    select_country(params).each {|id| @countries << Country.find(id).name.to_sym}
-    WorldBoundaries.generate_js_border_overlay(@countries[0].to_s)
-    # generate_js_border_overlay(@countries[0].to_s)
+    select_country(params).each { |id| @countries << Country.find(id).name.to_sym }
   rescue Error => e
     flash[:notice] = e.message
     redirect_to root_path
+  end
+
+  def country_overlay
+    boundaries = WorldBoundaries.generate_js_border_overlay(params[:name])
+    render json: {bound: boundaries}
   end
 
   def render_wiki

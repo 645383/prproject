@@ -1,5 +1,20 @@
 $(document).ready ->
 
+  addBordersOverlay = (map, bounds) ->
+    encodedPolygon = new google.maps.Polygon(
+      clickable: false
+      fillColor: "blue"
+      fillOpacity: 0.2
+      geodesic: false
+      map: map
+      strokeColor: "#000000"
+      strokeOpacity: 0.6
+      strokeWeight: 2
+      zIndex: 10
+      paths: eval(bounds)
+    )
+    encodedPolygon
+
   google.maps.Polygon::getBounds = ->
     bounds = new google.maps.LatLngBounds()
     paths = @getPaths()
@@ -16,29 +31,34 @@ $(document).ready ->
       i++
     bounds
 
-  initialize = ->
+  initialize = (bounds) ->
     mapCanvas = document.getElementById('map_canvas')
     mapOptions = {
       center: new google.maps.LatLng(50.5403, 15.5463),
       zoom: 9,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     }
+
     map = new google.maps.Map(mapCanvas, mapOptions)
-    poly = addBordersOverlay(map)
+    poly = addBordersOverlay(map ,bounds)
     map.fitBounds(poly.getBounds());
 
-  google.maps.event.addDomListener(window, 'load', initialize)
-
+  $.ajax
+    url: "country_overlay"
+    dataType: 'json'
+    type: "GET"
+    data:
+      name: $('.main_country').attr("data-attribute")
+    success: (data) ->
+      google.maps.event.addDomListener(window, 'load', initialize(data.bound))
 
   $("#show-countries").click ->
     $(".more-countries").toggle()
-
 
 #  $(".link-wiki").click ->
 #    $(".country-wiki").toggle()
 
 $(document).on "page:change", ->
-
   locale = window.location.href.toString().split('?locale=')[1]
   if locale == 'ru'
     I18n.locale = 'ru'
@@ -329,7 +349,6 @@ $(document).on "page:change", ->
 #    $("#next").attr "disabled", null
 #    $(".notice").hide()
 #
-
 
 
 #    singleTitle: "Share it!"
