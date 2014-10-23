@@ -8,7 +8,7 @@ set :repo_url, 'git@github.com:645383/prproject.git'
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
 # Default deploy_to directory is /var/www/my_app
-set :deploy_to, '/home/deploy/apps/foobar'
+set :deploy_to, '~/home/deploy/apps/foobar'
 
 # Default value for :scm is :git
 set :scm, :git
