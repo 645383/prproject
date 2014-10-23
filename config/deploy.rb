@@ -8,13 +8,12 @@ set :repo_url, 'git@github.com:645383/prproject.git'
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
 # Default deploy_to directory is /var/www/my_app
-set :deploy_to, '~/home/deploy/apps/foobar'
+set :deploy_to, '~/home/deploy/apps/prproject'
 
 # Default value for :scm is :git
 set :scm, :git
 set :branch, 'master'
 # Default value for :format is :pretty
-ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 set :format, :pretty
 
 # Default value for :log_level is :debug
