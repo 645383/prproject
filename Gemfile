@@ -62,6 +62,10 @@ group :development, :test do
   gem 'pry-nav'
   gem 'mysql'
   gem 'capistrano'
+  gem 'capistrano-puma', require: false
+  gem 'capistrano-rails',   '~> 1.1', require: false
+  gem 'capistrano-bundler', '~> 1.1', require: false
+  gem 'capistrano-rvm',   '~> 0.1', require: false
 end
 # gem 'activerecord-mysqlspatial-adapter'
 # gem 'mysqltopostgres'
