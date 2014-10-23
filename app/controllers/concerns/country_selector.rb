@@ -33,7 +33,13 @@ module CountrySelector
     weight = params[:weight].to_f
     foot_size = params[:foot_size].to_f
     hair_color = params[:hair_color].to_f
-    body_type = params[:body_type].to_f
+    if params[:body_type].to_f == 1.0 || params[:body_type].to_f == 2.0
+      body_type = 1.0
+    elsif params[:body_type].to_f == 4.0 || params[:body_type].to_f == 5.0
+      body_type = 3.0
+    else
+      body_type = params[:body_type].to_f
+    end
     indexes = []
     ind = []
 
@@ -41,18 +47,13 @@ module CountrySelector
       indexes << ((height - heights[i])**2) / height_variation + ((weight - weights[i])**2) / weight_variation +
           ((hair_color - hair_colors[i])**2) / hair_variation + ((body_type - body_types[i])**2) / body_variation +
           ((foot_size - foot_sizes[i])**2) / foot_variation
-      #index_min = index if i == 0
-      #if index < index_min
-      #  key = i
-      #  index_min = index
-      #end
     end
     indexes.sort.first(5).each do |n|
       ind << indexes.index(n) unless ind.include? indexes.index n
       ind << indexes.rindex(n) unless ind.include? indexes.rindex n
     end
     country_ids = []
-    ind.each {|i| country_ids << people[i].country_id}
+    ind.each { |i| country_ids << people[i].country_id }
     country_ids
   end
 

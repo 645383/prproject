@@ -1,18 +1,18 @@
 !!!
 %html
   %head
-    -#%title Там ли ты живешь?
+    %title Там ли ты живешь?
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = javascript_include_tag "i18n", "translations"
     %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
     -#%script{:src => "http://maps.google.com/maps/api/js?sensor=false", :type => "text/javascript"}
-    %script{:src => "http://maps.google.com/maps/api/js?libraries=geometry&sensor=false", :type => "text/javascript"}
-    -#%meta{:content => "article", :property => "og:type"}
-    -#%meta{:content => "Там ли ты живешь?", :property => "og:title"}/
-    -#%meta{:content => "Пейте дети молоко - будете здоровы!", :property => "og:description"}/
-    -#%meta{:content => "assets/img/logo.png", :property => "og:image"}/
-    -#%meta{:content => "morning-springs-9631.herokuapp.com", :property => "og:site_name"}
+    %script{:src => "http://maps.google.com/maps/api/js?libraries=geometry&sensor=false&language=#{I18n.locale}", :type => "text/javascript"}
+    %meta{:content => "article", :property => "og:type"}
+    %meta{:content => "Там ли ты живешь?", :property => "og:title"}/
+    %meta{:content => "Пейте дети молоко - будете здоровы!", :property => "og:description"}/
+    %meta{:content => "assets/img/logo.png", :property => "og:image"}/
+    %meta{:content => "prproject.herokuapp.com", :property => "og:site_name"}
 
   %body
     -unless @page_second

@@ -40,6 +40,8 @@ ru:
     fat: "Полное"
     slim: "Худое"
     normal: "Спортивное"
+    very_slim: "Очень худой"
+    heavy_set: "Плотного сложения"
   colors:
     red: "рыжий"
     black: "черный"

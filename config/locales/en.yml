@@ -40,6 +40,8 @@ en:
     fat: "Fat"
     slim: "Slim"
     normal: "Normal"
+    very_slim: "Very slim"
+    heavy_set: "Heavy set"
   colors:
     red: "Red"
     black: "Dark"

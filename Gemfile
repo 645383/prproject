@@ -61,6 +61,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-nav'
   gem 'mysql'
+  gem 'capistrano'
 end
 # gem 'activerecord-mysqlspatial-adapter'
 # gem 'mysqltopostgres'
