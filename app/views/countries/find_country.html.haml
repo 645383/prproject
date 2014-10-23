@@ -14,12 +14,11 @@
       %h3.btn.btn_color#show-countries
         =t("suggest.country")
     -else
-      .more-countries
-        %h3
-          = link_to "#{t(country, :scope => :countries)}",
-          countries_render_wiki_path(wiki: "http://#{locale}.wikipedia.org/wiki/#{t(country, :scope => :countries)}", country: country),
-          method: 'post', remote: true
-        .country-wiki{id: "#{country}"}
+      %h3.more-countries{"data-attribute" => "#{country}"}
+        = link_to "#{t(country, :scope => :countries)}", "#"
+        -#countries_render_wiki_path(wiki: "http://#{locale}.wikipedia.org/wiki/#{t(country, :scope => :countries)}", country: country),
+        -#method: 'post', remote: true
+      -#.country-wiki{id: "#{country}"}
 
 .map
   #map_canvas

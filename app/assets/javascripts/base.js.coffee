@@ -55,6 +55,26 @@ $(document).ready ->
   $("#show-countries").click ->
     $(".more-countries").toggle()
 
+  $('.more-countries').click ->
+    $.ajax
+      url: "country_overlay"
+      dataType: 'json'
+      type: "GET"
+      data:
+        name: $(this).attr("data-attribute")
+      success: (data) ->
+        google.maps.event.addDomListener(window, 'load', initialize(data.bound))
+
+  $('.main_country').click ->
+    $.ajax
+      url: "country_overlay"
+      dataType: 'json'
+      type: "GET"
+      data:
+        name: $(this).attr("data-attribute")
+      success: (data) ->
+        google.maps.event.addDomListener(window, 'load', initialize(data.bound))
+
 #  $(".link-wiki").click ->
 #    $(".country-wiki").toggle()
 
