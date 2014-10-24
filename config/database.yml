@@ -32,7 +32,7 @@ test:
 
 production:
   adapter: mysql
-  encoding: unicode
+#  encoding: unicode
   database: pr_project
   username: dev
   password: 645383
