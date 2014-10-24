@@ -51,7 +51,8 @@ gem 'nokogiri'
 # gem 'capistrano', group: :development
 
 # Use debugger
-gem 'pg'
+# gem 'pg'
+gem 'mysql'
 gem 'roo'
 gem 'rails_12factor', group: :production
 
@@ -60,7 +61,7 @@ group :development, :test do
   gem'pry'
   gem 'pry-rails'
   gem 'pry-nav'
-  gem 'mysql'
+
   gem 'capistrano'
   gem 'capistrano-puma', require: false
   gem 'capistrano-rails',   '~> 1.1', require: false

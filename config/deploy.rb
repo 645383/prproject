@@ -8,7 +8,7 @@ set :repo_url, 'git@github.com:645383/prproject.git'
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
 # Default deploy_to directory is /var/www/my_app
-set :deploy_to, '~/home/deploy/apps/prproject'
+set :deploy_to, '~/deploy/apps/prproject'
 
 # Default value for :scm is :git
 set :scm, :git
@@ -34,6 +34,12 @@ set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public
 
 # Default value for keep_releases is 5
 set :keep_releases, 5
+
+set :rvm_type, :user
+set :rvm_ruby_version, '2.1.2'
+# set :default_env, {
+#     :PATH => '/home/ubuntu/.rvm/gems/ruby-2.1.2/bin:/home/ubuntu/.rvm/gems/ruby-2.0.0-p353@global/bin:/home/deployer/.rvm/rubies/ruby-2.0.0-p353/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/deployer/.rvm/bin'
+# }
 
 set :puma_rackup, -> { File.join(current_path, 'config.ru') }
 set :puma_state, "#{shared_path}/tmp/pids/puma.state"

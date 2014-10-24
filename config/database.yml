@@ -31,7 +31,7 @@ test:
   timeout: 5000
 
 production:
-  adapter: postgresql
+  adapter: mysql
   encoding: unicode
   database: pr_project
   pool: 5
