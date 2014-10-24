@@ -34,5 +34,8 @@ production:
   adapter: mysql
   encoding: unicode
   database: pr_project
+  username: dev
+  password: 645383
   pool: 5
   timeout: 5000
+
