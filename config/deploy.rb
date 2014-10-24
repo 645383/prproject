@@ -37,6 +37,7 @@ set :keep_releases, 5
 
 set :rvm_type, :user
 set :rvm_ruby_version, '2.1.2'
+set :tmp_dir, "/home/dev/tmp"
 # set :default_env, {
 #     :PATH => '/home/ubuntu/.rvm/gems/ruby-2.1.2/bin:/home/ubuntu/.rvm/gems/ruby-2.0.0-p353@global/bin:/home/deployer/.rvm/rubies/ruby-2.0.0-p353/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/deployer/.rvm/bin'
 # }
