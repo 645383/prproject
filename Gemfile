@@ -73,6 +73,6 @@ end
 # gem 'mysql2psql', '~> 0.1.0'
 # gem 'activerecord-postgis-adapter'
 gem 'georuby'
-gem 'thin'
+gem 'puma'
 
 
