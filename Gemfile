@@ -63,7 +63,7 @@ group :development, :test do
   gem 'pry-nav'
 
   gem 'capistrano'
-  gem 'capistrano3-puma', require: false
+  gem 'capistrano-puma', require: false
   gem 'capistrano-rails',   '~> 1.1', require: false
   gem 'capistrano-bundler', '~> 1.1', require: false
   gem 'capistrano-rvm',   '~> 0.1', require: false
