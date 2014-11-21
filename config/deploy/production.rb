@@ -5,9 +5,9 @@
 # property set.  Don't declare `role :all`, it's a meta role.
 set :stage, :production
 
-role :app, %w{ubuntu@ec2-54-93-173-70.eu-central-1.compute.amazonaws.com}
-role :web, %w{ubuntu@ec2-54-93-173-70.eu-central-1.compute.amazonaws.com}
-role :db,  %w{ubuntu@ec2-54-93-173-70.eu-central-1.compute.amazonaws.com}
+role :app, %w{dev@ec2-54-93-173-70.eu-central-1.compute.amazonaws.com}
+role :web, %w{dev@ec2-54-93-173-70.eu-central-1.compute.amazonaws.com}
+role :db,  %w{dev@ec2-54-93-173-70.eu-central-1.compute.amazonaws.com}
 
 # Extended Server Syntax
 # ======================
